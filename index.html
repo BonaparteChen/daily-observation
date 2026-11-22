@@ -259,14 +259,16 @@
   <section id="pool">
     <span class="tag sun">试一试</span>
     <h2>点单台</h2>
-    <p class="sec-note">加一条外部信源进来，点「深挖成长文」或「做成摘要」会打开一张预填好的 GitHub 订单页，点提交即完成下单。之后全自动：采编生产 → 终审 → 直接发布，不用等主编逐篇审。下面「我的订单」实时同步每张单的状态。</p>
+    <p class="sec-note">加一条外部信源进来，填上邀请码，点「深挖成长文」或「做成摘要」即在本页直接下单，不用跳去别处。之后全自动：采编生产 → 终审 → 直接发布。下面「我的订单」实时同步每张单的状态。</p>
     <div class="card">
       <form class="add" id="addForm" novalidate>
         <input type="url" id="srcUrl" placeholder="粘贴一条外部信源链接（http/https）" aria-label="信源链接">
         <input type="text" id="srcTitle" placeholder="标题（可选，不填用域名）" aria-label="标题（可选）">
+        <input type="text" id="srcCode" placeholder="邀请码（下单必填）" aria-label="邀请码">
         <button type="submit">加一条外部信源</button>
       </form>
       <p class="err" id="formErr"></p>
+      <p class="pool-note" id="orderMsg" style="display:none"></p>
       <ul class="feed" id="feedList"></ul>
       <div class="feed-empty" id="feedEmpty">动态列表是空的。加一条信源进来，它会出现在这里，等你点单。</div>
       <div class="done-cols">
@@ -376,14 +378,23 @@
       var b = document.createElement('button');
       b.type = 'button'; b.className = cls; b.textContent = label;
       b.addEventListener('click', function(){
-        fn(); li.remove(); refreshCounts();
+        if (fn() === false) return;
+        li.remove(); refreshCounts();
       });
       return b;
     }
+    function guardCode(){
+      if (document.getElementById('srcCode').value.trim()) return true;
+      orderMsg('先在上面填邀请码，再下单。', true);
+      document.getElementById('srcCode').focus();
+      return false;
+    }
     acts.appendChild(btn('深挖成长文', 'b-deep', function(){
+      if (!guardCode()) return false;
       counts.deep++; addDone(deepDone, title, url); openOrder('深挖长文', title, url);
     }));
     acts.appendChild(btn('做成摘要', 'b-share', function(){
+      if (!guardCode()) return false;
       counts.share++; addDone(shareDone, title, url); openOrder('做成摘要', title, url);
     }));
     acts.appendChild(btn('划过', 'b-skip', function(){
@@ -408,11 +419,39 @@
     urlInput.value = ''; titleInput.value = '';
     refreshCounts();
   });
+  var RELAY_URL = 'https://daily-observation-relay.bonapartechen.workers.dev';
+  function orderMsg(text, isErr){
+    var m = document.getElementById('orderMsg');
+    m.textContent = text;
+    m.style.display = 'block';
+    m.style.color = isErr ? '#c0392b' : '';
+  }
   function openOrder(type, title, url){
-    var labels = encodeURIComponent('点单,' + type);
-    var t = encodeURIComponent('[点单][' + type + '] ' + title);
-    var body = encodeURIComponent('类型：' + type + '\n信源链接：' + url + '\n标题：' + title + '\n\n（由每日观察网站点单台提交，全自动流程：接单 → 生产 → 终审 → 发布）');
-    window.open('https://github.com/BonaparteChen/daily-observation/issues/new?labels=' + labels + '&title=' + t + '&body=' + body, '_blank', 'noopener');
+    var code = document.getElementById('srcCode').value.trim();
+    if (!code) {
+      orderMsg('先在上面填邀请码，再下单。', true);
+      document.getElementById('srcCode').focus();
+      return;
+    }
+    orderMsg('正在提交订单…', false);
+    fetch(RELAY_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type: type, title: title, url: url, code: code })
+    }).then(function(r){
+      return r.json().catch(function(){ return {}; }).then(function(j){ return { status: r.status, j: j }; });
+    }).then(function(res){
+      if (res.status === 201 && res.j.ok) {
+        orderMsg('已下单，订单号 #' + res.j.number + '。全自动流程已排队，下面「我的订单」会同步状态。', false);
+        setTimeout(loadOrders, 1500);
+      } else if (res.status === 403) {
+        orderMsg('邀请码不对，订单没有提交。', true);
+      } else {
+        orderMsg('提交失败（' + res.status + '），请稍后再试。', true);
+      }
+    }).catch(function(){
+      orderMsg('提交失败：网络问题，请稍后再试。', true);
+    });
   }
   function orderStatus(issue){
     var names = issue.labels.map(function(l){ return l.name; });
