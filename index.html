@@ -87,6 +87,26 @@
   .pub-compact .summary{margin:0; color:var(--muted); display:-webkit-box;
     -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden}
 
+  /* 三位主编（关于本站） */
+  .editors{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+  @media (max-width:900px){ .editors{grid-template-columns:1fr} }
+  .ed-card{text-align:left; padding:20px 20px 16px; position:relative}
+  .ed-card.tilt-l{transform:rotate(-1.2deg)} .ed-card.tilt-r{transform:rotate(1.2deg)}
+  .ed-role{display:inline-block; font-size:12.5px; font-weight:800; padding:1px 10px; border:2.5px solid var(--border);
+    border-radius:999px; color:#fff; margin-bottom:8px}
+  .ed-role.teal{background:var(--teal)} .ed-role.sun{background:var(--sun); color:#1d1a16} .ed-role.coral{background:var(--coral)}
+  .ed-card h3{margin:0 0 6px; font-size:22px}
+  .ed-art{display:block; margin:2px auto 8px; max-width:230px; width:100%; height:auto}
+  .ed-desc{margin:0 0 12px; color:var(--ink)}
+  .ed-guide{display:flex; gap:8px; align-items:flex-start; text-decoration:none; color:var(--ink);
+    border:2.5px dashed var(--border); border-radius:12px; padding:8px 12px; font-weight:700; font-size:14.5px;
+    transition:transform .12s ease}
+  .ed-guide:hover{transform:translate(-1px,-2px)}
+  .ed-guide .arr{font-weight:900}
+  .ed-guide.g-teal{background:#dff3ef} .ed-guide.g-sun{background:#fdf0cd} .ed-guide.g-coral{background:#fbe3de}
+  @media (prefers-color-scheme: dark){
+    .ed-guide.g-teal{background:#123f3b} .ed-guide.g-sun{background:#4a3a10} .ed-guide.g-coral{background:#4a2019} }
+
   /* 新旧对比 */
   .vs{display:grid; grid-template-columns:1fr 1fr; gap:18px}
   @media (max-width:700px){ .vs{grid-template-columns:1fr} }
@@ -189,41 +209,106 @@
     <span class="kicker">新版启程 · 2026-11-22</span>
     <h1>每日<span class="wavy">观察</span></h1>
     <div class="en">Daily Observation</div>
-    <p class="lede">网站已按新结构重建：旧五栏与往期内容已下线归档，这里从一张白纸重新开始。新流程只有三步——<strong>信源进动态 → 主编点单 → 两类成品上墙</strong>。不再每天凑满一期，只发真正值得深挖、值得分享的内容。</p>
-    <div class="flow">
-      <span>① 信源进动态</span><span class="arr">→</span>
-      <span>② 主编点单</span><span class="arr">→</span>
-      <span>③ 两类成品上墙</span>
-    </div>
   </header>
 
   <div class="zig"></div>
 
-  <!-- ① 新旧对比 -->
-  <section id="compare">
-    <span class="tag coral">先说清楚</span>
-    <h2>新旧对比</h2>
-    <p class="sec-note">旧版是一份五栏日报，新版是一个点单制的精选站。差别一页看完：</p>
-    <div class="vs">
-      <div class="card old">
-        <span class="badge oldb">旧版 · 已下线</span>
-        <h3>五栏日报</h3>
-        <ul>
-          <li>五个栏目：AI 技巧 / 科技 / 消费 / 加密 / 时政</li>
-          <li>每天凑满一期，栏目宁可留空也要等齐</li>
-          <li>选题由编辑流程驱动，先定版面再找内容</li>
-          <li>往期按日期成册，越积越厚</li>
-        </ul>
+  <!-- ① 关于本站 · 三位主编 -->
+  <section id="about">
+    <span class="tag coral">关于本站</span>
+    <h2>这家小站，住着三位主编</h2>
+    <p class="sec-note">本站的三个核心功能，各由一位主编负责——先认识一下他们，再往下逛。</p>
+    <div class="editors">
+      <div class="card ed-card tilt-l">
+        <span class="ed-role teal">开源派 · 小报童</span>
+        <h3>开源新闻台</h3>
+        <svg class="ed-art" viewBox="0 0 220 150" role="img" aria-label="小报童机器人举着报纸">
+          <g fill="none" stroke="var(--teal)" stroke-width="3.5" stroke-linecap="round">
+            <path d="M28 62a16 16 0 0 1 0-22"/><path d="M40 70a24 24 0 0 1 0-38"/>
+            <path d="M192 62a16 16 0 0 0 0-22"/><path d="M180 70a24 24 0 0 0 0-38"/>
+          </g>
+          <rect x="76" y="34" width="68" height="56" rx="16" fill="#7fc8bc" stroke="#1d1a16" stroke-width="3.5"/>
+          <path d="M72 38a38 20 0 0 1 76 0z" fill="#b07a3f" stroke="#1d1a16" stroke-width="3.5"/>
+          <rect x="64" y="34" width="92" height="8" rx="4" fill="#8a5a28" stroke="#1d1a16" stroke-width="3"/>
+          <line x1="88" y1="22" x2="82" y2="8" stroke="#1d1a16" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="132" y1="22" x2="138" y2="8" stroke="#1d1a16" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="82" cy="7" r="4.5" fill="var(--sun)" stroke="#1d1a16" stroke-width="2.5"/>
+          <circle cx="138" cy="7" r="4.5" fill="var(--sun)" stroke="#1d1a16" stroke-width="2.5"/>
+          <circle cx="97" cy="60" r="5" fill="#1d1a16"/><circle cx="123" cy="60" r="5" fill="#1d1a16"/>
+          <path d="M101 74q9 7 18 0" fill="none" stroke="#1d1a16" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="86" cy="70" r="4.5" fill="#f2a49c"/><circle cx="134" cy="70" r="4.5" fill="#f2a49c"/>
+          <path d="M40 96 L110 82 L180 96 L172 142 L110 132 L48 142 Z" fill="#fffdf6" stroke="#1d1a16" stroke-width="3.5" stroke-linejoin="round"/>
+          <line x1="110" y1="82" x2="110" y2="132" stroke="#1d1a16" stroke-width="2.5"/>
+          <g stroke="#b9b2a4" stroke-width="3" stroke-linecap="round">
+            <line x1="58" y1="104" x2="100" y2="98"/><line x1="58" y1="114" x2="100" y2="108"/><line x1="58" y1="124" x2="100" y2="118"/>
+            <line x1="120" y1="98" x2="162" y2="104"/><line x1="120" y1="118" x2="162" y2="124"/>
+          </g>
+          <circle cx="141" cy="110" r="10" fill="#7fb6d9" stroke="#1d1a16" stroke-width="2.5"/>
+          <path d="M133 106q6-5 12 1 M135 116q7 4 13-1" fill="none" stroke="#3e7d4e" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+        <p class="ed-desc">全网信源公开汇集，谁都能看，谁都能点单。</p>
+        <a class="ed-guide g-teal" href="#pool"><span class="arr">➜</span><span>这样用：下拉到点单台，在动态列表里挑信源</span></a>
       </div>
-      <div class="card new">
-        <span class="badge newb">新版 · 现行</span>
-        <h3>点单制精选</h3>
-        <ul>
-          <li>只有两类内容：<strong>深度思考</strong>长文 + <strong>值得分享</strong>摘要</li>
-          <li>由点单驱动：主编在动态里挑中哪条，就做哪条</li>
-          <li>不凑期数、不等栏目，有值得发的才上墙</li>
-          <li>每件成品必附信源链接，可回溯原文</li>
-        </ul>
+      <div class="card ed-card">
+        <span class="ed-role sun">助读派 · 小结</span>
+        <h3>摘要辅助阅读</h3>
+        <svg class="ed-art" viewBox="0 0 220 150" role="img" aria-label="小结把长卷轴收成小卡片">
+          <path d="M52 118q58-26 116 0l-6 22H58z" fill="var(--sun)" stroke="#1d1a16" stroke-width="3.5" stroke-linejoin="round"/>
+          <circle cx="110" cy="66" r="38" fill="#ffd9b3" stroke="#1d1a16" stroke-width="3.5"/>
+          <path d="M72 62q-4-34 38-36 40 2 38 36-2-16-14-22-6 10-24 10-20 0-28-8-8 6-10 20z" fill="#6b4a2f" stroke="#1d1a16" stroke-width="3.5" stroke-linejoin="round"/>
+          <circle cx="95" cy="68" r="14" fill="rgba(255,255,255,.25)" stroke="#1d1a16" stroke-width="3.5"/>
+          <circle cx="126" cy="68" r="14" fill="rgba(255,255,255,.25)" stroke="#1d1a16" stroke-width="3.5"/>
+          <line x1="109" y1="68" x2="112" y2="68" stroke="#1d1a16" stroke-width="3.5"/>
+          <circle cx="95" cy="69" r="3.4" fill="#1d1a16"/><circle cx="126" cy="69" r="3.4" fill="#1d1a16"/>
+          <path d="M102 84q8 6 16 0" fill="none" stroke="#1d1a16" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="80" cy="80" r="4.5" fill="#f2a49c"/><circle cx="140" cy="80" r="4.5" fill="#f2a49c"/>
+          <g transform="rotate(9 168 104)">
+            <rect x="140" y="80" width="56" height="46" rx="6" fill="#fffdf6" stroke="#1d1a16" stroke-width="3.2"/>
+            <g stroke="#b9b2a4" stroke-width="3" stroke-linecap="round">
+              <line x1="149" y1="93" x2="187" y2="93"/><line x1="149" y1="103" x2="187" y2="103"/><line x1="149" y1="113" x2="176" y2="113"/>
+            </g>
+            <circle cx="196" cy="80" r="5" fill="#e8ddc8" stroke="#1d1a16" stroke-width="2.6"/>
+            <circle cx="196" cy="126" r="5" fill="#e8ddc8" stroke="#1d1a16" stroke-width="2.6"/>
+          </g>
+          <circle cx="178" cy="34" r="15" fill="var(--sun)" stroke="#1d1a16" stroke-width="3"/>
+          <path d="M170 34l6 6 11-12" fill="none" stroke="#1d1a16" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p class="ed-desc">长文先拆成大纲与一句话，让注意困难与阅读障碍也能轻松读懂。</p>
+        <a class="ed-guide g-sun" href="#share"><span class="arr">➜</span><span>这样用：点卡片的「看详情」，先看一句话再看大纲</span></a>
+      </div>
+      <div class="card ed-card tilt-r">
+        <span class="ed-role coral">深挖派 · 钻头君</span>
+        <h3>深挖值得思考</h3>
+        <svg class="ed-art" viewBox="0 0 220 150" role="img" aria-label="钻头君站在积木地球上探险">
+          <g stroke="#1d1a16" stroke-width="3" stroke-linejoin="round">
+            <rect x="52" y="118" width="30" height="24" rx="4" fill="#e4572e"/>
+            <rect x="84" y="118" width="30" height="24" rx="4" fill="#f2b234"/>
+            <rect x="116" y="118" width="30" height="24" rx="4" fill="#2a9d8f"/>
+            <rect x="148" y="118" width="30" height="24" rx="4" fill="#7fb6d9"/>
+            <rect x="68" y="94" width="30" height="24" rx="4" fill="#2a9d8f"/>
+            <rect x="100" y="94" width="30" height="24" rx="4" fill="#e4572e"/>
+            <rect x="132" y="94" width="30" height="24" rx="4" fill="#f2b234"/>
+          </g>
+          <circle cx="104" cy="52" r="27" fill="#ffd9b3" stroke="#1d1a16" stroke-width="3.5"/>
+          <path d="M74 50a30 24 0 0 1 60 0z" fill="#b07a3f" stroke="#1d1a16" stroke-width="3.5"/>
+          <rect x="68" y="46" width="72" height="8" rx="4" fill="#8a5a28" stroke="#1d1a16" stroke-width="3"/>
+          <circle cx="94" cy="34" r="7.5" fill="#bfe3ea" stroke="#1d1a16" stroke-width="2.8"/>
+          <circle cx="114" cy="34" r="7.5" fill="#bfe3ea" stroke="#1d1a16" stroke-width="2.8"/>
+          <circle cx="96" cy="54" r="3.2" fill="#1d1a16"/><circle cx="113" cy="54" r="3.2" fill="#1d1a16"/>
+          <path d="M98 65q6 5 12 0" fill="none" stroke="#1d1a16" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="86" cy="61" r="4" fill="#f2a49c"/><circle cx="122" cy="61" r="4" fill="#f2a49c"/>
+          <path d="M84 78q20-8 40 0l4 18H80z" fill="#8a9a5b" stroke="#1d1a16" stroke-width="3.2" stroke-linejoin="round"/>
+          <circle cx="52" cy="66" r="13" fill="#bfe3ea" stroke="#1d1a16" stroke-width="3.2"/>
+          <line x1="62" y1="76" x2="80" y2="90" stroke="#1d1a16" stroke-width="4.5" stroke-linecap="round"/>
+          <g transform="rotate(-18 160 84)">
+            <rect x="146" y="72" width="26" height="11" rx="4" fill="var(--sun)" stroke="#1d1a16" stroke-width="3"/>
+            <path d="M172 75l16 3-16 5z" fill="#c9ced6" stroke="#1d1a16" stroke-width="2.8" stroke-linejoin="round"/>
+          </g>
+          <path d="M30 30l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="var(--sun)" stroke="#1d1a16" stroke-width="2.2" stroke-linejoin="round"/>
+          <circle cx="192" cy="26" r="4" fill="var(--coral)" stroke="#1d1a16" stroke-width="2.2"/>
+        </svg>
+        <p class="ed-desc">值得想的事往深里钻，换个新奇角度把世界重新拼装整理。</p>
+        <a class="ed-guide g-coral" href="#deep"><span class="arr">➜</span><span>这样用：点「看详情」读长文，也可在点单台点「深挖成长文」</span></a>
       </div>
     </div>
   </section>
