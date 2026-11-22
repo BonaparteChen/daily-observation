@@ -295,7 +295,7 @@
   <section id="pool">
     <span class="tag sun">试一试</span>
     <h2>点单台</h2>
-    <p class="sec-note">先把外部信源加进下面的列表，再点条目上的「深挖成长文」或「做成摘要」——会弹出邀请码对话框，填对即在本页直接下单，不用跳去别处。之后全自动：采编生产 → 终审 → 直接发布。下面「我的订单」实时同步每张单的状态。</p>
+    <p class="sec-note">先把外部信源加进下面的列表，再点条目上的「深挖成长文」或「做成摘要」——会弹出邀请码对话框，填对即在本页直接下单，不用跳去别处。之后全自动：采编生产 → 终审 → 直接发布。动态列表上方就是「我的订单」，实时同步每张单的状态。</p>
     <div class="card">
       <form class="add" id="addForm" novalidate>
         <input type="url" id="srcUrl" placeholder="粘贴一条外部信源链接（http/https）" aria-label="信源链接">
@@ -304,6 +304,9 @@
       </form>
       <p class="err" id="formErr"></p>
       <p class="pool-note" id="orderMsg" style="display:none"></p>
+      <h3 style="margin:16px 0 8px">我的订单 · 状态</h3>
+      <ul class="feed" id="orderList"><li class="none">正在同步订单状态…</li></ul>
+      <p class="pool-note">状态来自仓库订单箱（GitHub Issues）：待接单 → 已接单 → 生产中 → 已发布。点订单标题可查看详情。</p>
       <ul class="feed" id="feedList"></ul>
       <div class="feed-empty" id="feedEmpty">动态列表是空的。加一条信源进来，它会出现在这里，等你点单。</div>
       <div class="done-cols">
@@ -329,11 +332,6 @@
           <button type="button" class="m-ok" id="codeOk">提交订单</button>
         </div>
       </div>
-    </div>
-    <div class="card" style="margin-top:14px">
-      <h3>我的订单 · 状态</h3>
-      <ul class="feed" id="orderList"><li class="none">正在同步订单状态…</li></ul>
-      <p class="pool-note">状态来自仓库订单箱（GitHub Issues）：待接单 → 已接单 → 生产中 → 已发布。点订单标题可查看详情。</p>
     </div>
   </section>
 
@@ -538,7 +536,7 @@
         if (order.type === '深挖长文') { counts.deep++; addDone(deepDone, order.title, order.url); }
         else { counts.share++; addDone(shareDone, order.title, order.url); }
         order.li.remove(); refreshCounts();
-        orderMsg('已下单，订单号 #' + res.j.number + '。全自动流程已排队，下面「我的订单」会同步状态。', false);
+        orderMsg('已下单，订单号 #' + res.j.number + '。全自动流程已排队，上方「我的订单」会同步状态。', false);
         setTimeout(loadOrders, 1500);
       } else if (res.status === 403) {
         codeFail('邀请码不对，请重新填写；也可以点「放弃下单」关掉弹窗。');
