@@ -117,6 +117,17 @@
     border-radius:12px; background:var(--sun); color:#1d1a16; cursor:pointer; box-shadow:3px 3px 0 rgba(29,26,22,.85)}
   form.add button:active{transform:translate(2px,2px); box-shadow:1px 1px 0 rgba(29,26,22,.85)}
   .err{display:none; color:var(--coral); font-weight:700; margin:6px 0 0}
+  .modal-overlay{display:none; position:fixed; inset:0; background:rgba(20,16,8,.55); z-index:60; align-items:center; justify-content:center; padding:18px}
+  .modal-overlay.open{display:flex}
+  .modal{background:var(--surface); color:var(--text); border:3px solid var(--border); border-radius:18px; box-shadow:8px 8px 0 var(--border); max-width:420px; width:100%; padding:22px}
+  .modal h3{margin:0 0 6px}
+  .modal .m-sub{margin:0 0 12px; opacity:.85; word-break:break-all}
+  .modal input{width:100%; box-sizing:border-box; padding:10px 12px; border:2px solid var(--border); border-radius:10px; font:inherit; background:var(--surface); color:var(--text)}
+  .modal .m-err{display:none; color:var(--coral); font-weight:700; margin:8px 0 0}
+  .modal .m-acts{display:flex; gap:10px; margin-top:16px; justify-content:flex-end}
+  .modal .m-acts button{font:inherit; font-weight:700; padding:9px 16px; border-radius:999px; border:2px solid var(--border); cursor:pointer}
+  .modal .m-ok{background:var(--teal); color:#fff}
+  .modal .m-cancel{background:var(--surface); color:var(--text)}
   .feed{list-style:none; margin:14px 0 0; padding:0; display:grid; gap:12px}
   .feed li{border:3px solid var(--border); border-radius:14px; padding:14px 16px; background:var(--bg)}
   .feed .t{font-weight:900; font-size:17px; word-break:break-all}
@@ -259,12 +270,11 @@
   <section id="pool">
     <span class="tag sun">试一试</span>
     <h2>点单台</h2>
-    <p class="sec-note">加一条外部信源进来，填上邀请码，点「深挖成长文」或「做成摘要」即在本页直接下单，不用跳去别处。之后全自动：采编生产 → 终审 → 直接发布。下面「我的订单」实时同步每张单的状态。</p>
+    <p class="sec-note">先把外部信源加进下面的列表，再点条目上的「深挖成长文」或「做成摘要」——会弹出邀请码对话框，填对即在本页直接下单，不用跳去别处。之后全自动：采编生产 → 终审 → 直接发布。下面「我的订单」实时同步每张单的状态。</p>
     <div class="card">
       <form class="add" id="addForm" novalidate>
         <input type="url" id="srcUrl" placeholder="粘贴一条外部信源链接（http/https）" aria-label="信源链接">
         <input type="text" id="srcTitle" placeholder="标题（可选，不填用域名）" aria-label="标题（可选）">
-        <input type="text" id="srcCode" placeholder="邀请码（下单必填）" aria-label="邀请码">
         <button type="submit">加一条外部信源</button>
       </form>
       <p class="err" id="formErr"></p>
@@ -282,6 +292,18 @@
         </div>
       </div>
       <p class="pool-note">已划过 <span class="counts" id="skipCount">0</span> 条。划过只是本页里的忽略动作，不会下单。</p>
+    </div>
+    <div class="modal-overlay" id="codeModal" role="dialog" aria-modal="true" aria-labelledby="codeModalTitle">
+      <div class="modal">
+        <h3 id="codeModalTitle">填写邀请码</h3>
+        <p class="m-sub" id="codeModalSub"></p>
+        <input type="text" id="codeInput" placeholder="邀请码" aria-label="邀请码" autocomplete="off">
+        <p class="m-err" id="codeErr"></p>
+        <div class="m-acts">
+          <button type="button" class="m-cancel" id="codeCancel">放弃下单</button>
+          <button type="button" class="m-ok" id="codeOk">提交订单</button>
+        </div>
+      </div>
     </div>
     <div class="card" style="margin-top:14px">
       <h3>我的订单 · 状态</h3>
@@ -378,24 +400,19 @@
       var b = document.createElement('button');
       b.type = 'button'; b.className = cls; b.textContent = label;
       b.addEventListener('click', function(){
-        if (fn() === false) return;
+        var r = fn();
+        if (r === false || r === 'defer') return;
         li.remove(); refreshCounts();
       });
       return b;
     }
-    function guardCode(){
-      if (document.getElementById('srcCode').value.trim()) return true;
-      orderMsg('先在上面填邀请码，再下单。', true);
-      document.getElementById('srcCode').focus();
-      return false;
-    }
     acts.appendChild(btn('深挖成长文', 'b-deep', function(){
-      if (!guardCode()) return false;
-      counts.deep++; addDone(deepDone, title, url); openOrder('深挖长文', title, url);
+      openCodeDialog('深挖长文', title, url, li);
+      return 'defer';
     }));
     acts.appendChild(btn('做成摘要', 'b-share', function(){
-      if (!guardCode()) return false;
-      counts.share++; addDone(shareDone, title, url); openOrder('做成摘要', title, url);
+      openCodeDialog('做成摘要', title, url, li);
+      return 'defer';
     }));
     acts.appendChild(btn('划过', 'b-skip', function(){
       counts.skip++;
@@ -426,33 +443,69 @@
     m.style.display = 'block';
     m.style.color = isErr ? '#c0392b' : '';
   }
-  function openOrder(type, title, url){
-    var code = document.getElementById('srcCode').value.trim();
-    if (!code) {
-      orderMsg('先在上面填邀请码，再下单。', true);
-      document.getElementById('srcCode').focus();
-      return;
-    }
-    orderMsg('正在提交订单…', false);
+  var pendingOrder = null;
+  var codeModal = document.getElementById('codeModal');
+  var codeInput = document.getElementById('codeInput');
+  var codeErr = document.getElementById('codeErr');
+  var codeOk = document.getElementById('codeOk');
+  function openCodeDialog(type, title, url, li){
+    pendingOrder = { type: type, title: title, url: url, li: li };
+    document.getElementById('codeModalSub').textContent = type + ' · ' + title;
+    codeInput.value = '';
+    codeErr.style.display = 'none';
+    codeOk.disabled = false;
+    codeOk.textContent = '提交订单';
+    codeModal.classList.add('open');
+    codeInput.focus();
+  }
+  function closeCodeDialog(){
+    codeModal.classList.remove('open');
+    pendingOrder = null;
+  }
+  function codeFail(text){
+    codeErr.textContent = text;
+    codeErr.style.display = 'block';
+    codeOk.disabled = false;
+    codeOk.textContent = '重新提交';
+    codeInput.select();
+  }
+  document.getElementById('codeCancel').addEventListener('click', closeCodeDialog);
+  codeModal.addEventListener('click', function(e){ if (e.target === codeModal) closeCodeDialog(); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && codeModal.classList.contains('open')) closeCodeDialog();
+    if (e.key === 'Enter' && codeModal.classList.contains('open')) { e.preventDefault(); codeOk.click(); }
+  });
+  codeOk.addEventListener('click', function(){
+    if (!pendingOrder) return;
+    var code = codeInput.value.trim();
+    if (!code) { codeFail('先填邀请码再提交。'); return; }
+    codeErr.style.display = 'none';
+    codeOk.disabled = true;
+    codeOk.textContent = '提交中…';
+    var order = pendingOrder;
     fetch(RELAY_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ type: type, title: title, url: url, code: code })
+      body: JSON.stringify({ type: order.type, title: order.title, url: order.url, code: code })
     }).then(function(r){
       return r.json().catch(function(){ return {}; }).then(function(j){ return { status: r.status, j: j }; });
     }).then(function(res){
       if (res.status === 201 && res.j.ok) {
+        closeCodeDialog();
+        if (order.type === '深挖长文') { counts.deep++; addDone(deepDone, order.title, order.url); }
+        else { counts.share++; addDone(shareDone, order.title, order.url); }
+        order.li.remove(); refreshCounts();
         orderMsg('已下单，订单号 #' + res.j.number + '。全自动流程已排队，下面「我的订单」会同步状态。', false);
         setTimeout(loadOrders, 1500);
       } else if (res.status === 403) {
-        orderMsg('邀请码不对，订单没有提交。', true);
+        codeFail('邀请码不对，请重新填写；也可以点「放弃下单」关掉弹窗。');
       } else {
-        orderMsg('提交失败（' + res.status + '），请稍后再试。', true);
+        codeFail('提交失败（' + res.status + '），可以重试，或点「放弃下单」关掉弹窗。');
       }
     }).catch(function(){
-      orderMsg('提交失败：网络问题，请稍后再试。', true);
+      codeFail('提交失败：网络问题，可以重试，或点「放弃下单」关掉弹窗。');
     });
-  }
+  });
   function orderStatus(issue){
     var names = issue.labels.map(function(l){ return l.name; });
     if (issue.state === 'closed' || names.indexOf('已发布') >= 0) return '已发布';
