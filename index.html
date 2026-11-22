@@ -449,7 +449,7 @@
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(data){
       if (!data || !data.items) return;
-      data.items.forEach(function(item){
+      data.items.slice(0, 20).forEach(function(item){
         if (!item.title || !item.url) return;
         var li = makeFeedItem(item.title, item.url);
         if (item.source || item.date) {
