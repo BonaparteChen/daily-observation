@@ -77,6 +77,11 @@
 
   .card{background:var(--surface); border:3px solid var(--border); border-radius:18px;
     box-shadow:var(--shadow); padding:24px 22px}
+  .pub h3{margin:0 0 8px; font-size:21px}
+  .pub h4{margin:16px 0 6px; font-size:16px}
+  .pub ul{margin:0; padding-left:20px}
+  .pub li{margin:4px 0}
+  .pub .src{margin-top:16px; font-weight:700}
 
   /* 新旧对比 */
   .vs{display:grid; grid-template-columns:1fr 1fr; gap:18px}
@@ -240,12 +245,32 @@
     <span class="tag">值得分享</span>
     <h2>值得分享</h2>
     <p class="sec-note">轻量成品区：值得转的内容做成摘要卡片——结构大纲 + 给读者的想法与建议 + 原文链接，扫一眼就知道值不值得点原文。</p>
-    <div class="card empty">
-      <div class="big">虚位以待</div>
-      <p>这里还没有摘要卡片。第一张卡将来自主编的第一次点单：他在动态里挑中一条值得分享的内容，采编 Bot 就会把它分解成大纲、提炼想法与建议，做成卡片上墙。</p>
-      <span class="stamp">待上墙</span>
+    <div id="shareCards">
+    <article class="card pub">
+      <span class="tag">摘要 · 订单 #2</span>
+      <h3>敢学、愿意学、会学：一条让 AI 陪你把学习走完的演示流程</h3>
+      <p><strong>一句话摘要：</strong>这条 4 分 53 秒的视频重点不在发布新功能，而在演示一条可复用的做法：方向自己定，需求让 AI 反问清楚，再用豆包工作生成一个能摸底、排路径、出题、盯进度的学习网页，最后把整条流程固化成可反复调用的 skill。</p>
+      <h4>大纲要点</h4>
+      <ul>
+        <li><strong>开场</strong>：卡住人的往往不是「学什么」，而是「学到什么程度」；UP 主用豆包做了一个学习网页来拆解「该怎么用 AI」。</li>
+        <li><strong>成品形态</strong>：摸底—路线—练习—反馈闭环；路线图用颜色标状态（绿=已学会、灰=未碰、黄=正在学），点节点重讲、出题、自动更新进度。</li>
+        <li><strong>做法</strong>：先让豆包代写提示词（把需求说清，再让它「依据这个需求给我一个提示词」），加上「应用生成 / 可视化」类预设 skill 生成网页。</li>
+        <li><strong>方法论</strong>：AI 是执行者，不是定方向的人——不要说「帮我做一个辅助学习的综合网站」；需求模糊时让 AI 反问三四个问题，再让它检索实现路径。豆包可切换多家第三方大模型。</li>
+        <li><strong>第二个作品</strong>：从「学知识」到「对着岗位学」——岗位链路可视化（任务链、工作内容、产出、所需能力），能力点回流到学习网页，最后把整条流程固化成 skill 复用。</li>
+        <li><strong>双端接续</strong>：手机与电脑同账号，电脑上跑到一半的任务可在手机看进度、补指令，电脑继续执行。</li>
+      </ul>
+      <h4>给读者的想法与建议</h4>
+      <ul>
+        <li><strong>先定方向，再让 AI 动手。</strong>把「做什么、做到什么程度」留在自己手里，AI 负责拆解和执行。</li>
+        <li><strong>需求模糊时，让 AI 反问你。</strong>先让它问三四个问题把目标问清，比硬憋提示词更实用。</li>
+        <li><strong>把重复流程固化成 skill。</strong>同一类任务第二次做时，不必再从零描述一遍需求。</li>
+        <li><strong>演示不等于亲测，成品要自己校对。</strong>评论区有用户反馈生成的网页会出现标题与正文对不上的情况；把它当「快速搭出初版」的工具。</li>
+        <li><strong>用之前先确认边界。</strong>豆包工作独立客户端目前仅支持桌面端，另有豆包客户端内与飞书内入口（飞书需 V7.75 及以上）；团队订阅官方标价 ¥166/席/月（年付合计 ¥1,988/席/年），含 2,000 点/席/月，可加购 AI 用量套餐。</li>
+        <li><strong>对「商单」质疑保持清醒。</strong>UP 主为机构认证账号，评论区有多条留言质疑本片是商单，截至采集未见 UP 主回应，此事未证实；把视频当流程参考即可，别当独立评测。</li>
+      </ul>
+      <p class="src">原文：B 站视频《敢学愿意学会学，我用豆包工作练了一遍》（UP 主「像素范」，2026-11-21）<br><a href="https://www.bilibili.com/video/BV1AFyYztEQA/" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1AFyYztEQA/</a></p>
+    </article>
     </div>
-    <div id="shareCards"></div>
   </section>
 
   <div class="zig"></div>
