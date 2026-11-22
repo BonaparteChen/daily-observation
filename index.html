@@ -82,6 +82,10 @@
   .pub ul{margin:0; padding-left:20px}
   .pub li{margin:4px 0}
   .pub .src{margin-top:16px; font-weight:700}
+  .pub-grid{display:grid; gap:18px}
+  .pub-compact{padding:16px 18px}
+  .pub-compact .summary{margin:0; color:var(--muted); display:-webkit-box;
+    -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden}
 
   /* 新旧对比 */
   .vs{display:grid; grid-template-columns:1fr 1fr; gap:18px}
@@ -107,6 +111,7 @@
 
   /* 空状态 */
   .empty{text-align:left; border-style:dashed}
+  #deepCards:not(:empty) + .empty{display:none}
   .empty .big{font-size:24px; font-weight:900; letter-spacing:.06em}
   .empty p{color:var(--muted); margin:8px 0 0; max-width:720px}
   .empty .stamp{display:inline-block; margin-top:14px; border:3px solid var(--coral); color:var(--coral);
@@ -122,24 +127,30 @@
     border-radius:12px; background:var(--sun); color:#1d1a16; cursor:pointer; box-shadow:3px 3px 0 rgba(29,26,22,.85)}
   form.add button:active{transform:translate(2px,2px); box-shadow:1px 1px 0 rgba(29,26,22,.85)}
   .err{display:none; color:var(--coral); font-weight:700; margin:6px 0 0}
-  .modal-overlay{display:none; position:fixed; inset:0; background:rgba(20,16,8,.55); z-index:60; align-items:center; justify-content:center; padding:18px}
-  .modal-overlay.open{display:flex}
-  .modal{background:var(--surface); color:var(--text); border:3px solid var(--border); border-radius:18px; box-shadow:8px 8px 0 var(--border); max-width:420px; width:100%; padding:22px}
+  .modal{background:var(--surface); color:var(--ink); border:3px solid var(--border); border-radius:18px;
+    box-shadow:8px 8px 0 var(--border); width:min(420px, calc(100% - 36px)); max-height:calc(100% - 36px); padding:22px}
+  .modal::backdrop{background:rgba(20,16,8,.55)}
+  .modal.detail{width:min(740px, calc(100% - 36px)); overflow-wrap:anywhere; overscroll-behavior:contain}
+  .detail-head{display:flex; align-items:start; justify-content:space-between; gap:12px}
+  .detail-head button{flex-shrink:0}
+  @media (prefers-color-scheme: dark){ .detail a:not(.pill){color:#73d9d8} }
   .modal h3{margin:0 0 6px}
   .modal .m-sub{margin:0 0 12px; opacity:.85; word-break:break-all}
-  .modal input{width:100%; box-sizing:border-box; padding:10px 12px; border:2px solid var(--border); border-radius:10px; font:inherit; background:var(--surface); color:var(--text)}
+  .modal input{width:100%; box-sizing:border-box; padding:10px 12px; border:2px solid var(--border); border-radius:10px; font:inherit; background:var(--surface); color:var(--ink)}
   .modal .m-err{display:none; color:var(--coral); font-weight:700; margin:8px 0 0}
   .modal .m-acts{display:flex; gap:10px; margin-top:16px; justify-content:flex-end}
   .modal .m-acts button{font:inherit; font-weight:700; padding:9px 16px; border-radius:999px; border:2px solid var(--border); cursor:pointer}
   .modal .m-ok{background:var(--teal); color:#fff}
-  .modal .m-cancel{background:var(--surface); color:var(--text)}
+  .modal .m-cancel{background:var(--surface); color:var(--ink)}
   .feed{list-style:none; margin:14px 0 0; padding:0; display:grid; gap:12px}
   .feed li{border:3px solid var(--border); border-radius:14px; padding:14px 16px; background:var(--bg)}
   .feed .t{font-weight:900; font-size:17px; word-break:break-all}
   .feed .u{font-size:13.5px; word-break:break-all}
   .acts{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
-  .acts button{font:inherit; font-size:14px; font-weight:800; padding:5px 14px; border-radius:999px;
+  .acts button,.pill{font:inherit; font-size:14px; font-weight:800; padding:5px 14px; border-radius:999px; text-decoration:none;
     border:2.5px solid var(--border); cursor:pointer; background:var(--surface); color:var(--ink)}
+  .acts .b-detail,.feed-more{background:var(--sun); color:#1d1a16}
+  .feed-more{margin-top:12px}
   .acts .b-deep{background:var(--coral); color:#fff}
   .acts .b-share{background:var(--teal); color:#fff}
   .acts .b-skip{background:transparent; color:var(--muted)}
@@ -245,10 +256,23 @@
     <span class="tag">值得分享</span>
     <h2>值得分享</h2>
     <p class="sec-note">轻量成品区：值得转的内容做成摘要卡片——结构大纲 + 给读者的想法与建议 + 原文链接，扫一眼就知道值不值得点原文。</p>
-    <div id="shareCards">
-    <article class="card pub">
+    <!-- 发布摘要时，在 #shareCards 添加紧凑卡，另按下方示例添加静态全文弹窗。 -->
+    <div id="shareCards" class="pub-grid">
+      <article class="card pub pub-compact">
+        <h3>敢学、愿意学、会学：一条让 AI 陪你把学习走完的演示流程</h3>
+        <p class="summary"><strong>一句话摘要：</strong>这条 4 分 53 秒的视频重点不在发布新功能，而在演示一条可复用的做法：方向自己定，需求让 AI 反问清楚，再用豆包工作生成一个能摸底、排路径、出题、盯进度的学习网页，最后把整条流程固化成可反复调用的 skill。</p>
+        <div class="acts">
+          <button type="button" class="b-detail" data-dialog="shareDetail2" aria-haspopup="dialog">看详情</button>
+          <a class="pill" href="https://www.bilibili.com/video/BV1AFyYztEQA/" target="_blank" rel="noopener">原文</a>
+        </div>
+      </article>
+    </div>
+    <dialog class="modal detail pub" id="shareDetail2" aria-labelledby="shareDetailTitle2">
+      <div class="detail-head">
+        <h3 id="shareDetailTitle2">敢学、愿意学、会学：一条让 AI 陪你把学习走完的演示流程</h3>
+        <button type="button" class="pill" data-close autofocus>关闭</button>
+      </div>
       <span class="tag">摘要 · 订单 #2</span>
-      <h3>敢学、愿意学、会学：一条让 AI 陪你把学习走完的演示流程</h3>
       <p><strong>一句话摘要：</strong>这条 4 分 53 秒的视频重点不在发布新功能，而在演示一条可复用的做法：方向自己定，需求让 AI 反问清楚，再用豆包工作生成一个能摸底、排路径、出题、盯进度的学习网页，最后把整条流程固化成可反复调用的 skill。</p>
       <h4>大纲要点</h4>
       <ul>
@@ -269,8 +293,7 @@
         <li><strong>对「商单」质疑保持清醒。</strong>UP 主为机构认证账号，评论区有多条留言质疑本片是商单，截至采集未见 UP 主回应，此事未证实；把视频当流程参考即可，别当独立评测。</li>
       </ul>
       <p class="src">原文：B 站视频《敢学愿意学会学，我用豆包工作练了一遍》（UP 主「像素范」，2026-11-21）<br><a href="https://www.bilibili.com/video/BV1AFyYztEQA/" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1AFyYztEQA/</a></p>
-    </article>
-    </div>
+    </dialog>
   </section>
 
   <div class="zig"></div>
@@ -281,12 +304,31 @@
     <span class="tag coral">深度思考</span>
     <h2>深度思考</h2>
     <p class="sec-note">重量成品区：值得深想的内容，按 Qdaily 式长文规格做深度解析——回原件核验、多来源交叉、文末附完整信源清单。</p>
+    <div id="deepCards" class="pub-grid"></div>
     <div class="card empty">
       <div class="big">虚位以待</div>
       <p>这里还没有长文。深挖内容按硬规格成稿：正文 2,200–3,500 字、4–6 个小标题、至少 3 个独立来源核验、专节交代限制与未确认事项，并附配图与信源清单。第一篇将来自主编的第一次深挖点单。</p>
       <span class="stamp">待上墙</span>
     </div>
-    <div id="deepCards"></div>
+    <!-- 发布长文时，将下面的卡片和详情复制到 #deepCards，替换编号、文案和链接。 -->
+    <template id="deepCardTemplate">
+      <article class="card pub pub-compact">
+        <h3>长文标题</h3>
+        <p class="summary">长文导语</p>
+        <div class="acts">
+          <button type="button" class="b-detail" data-dialog="deepDetail-N" aria-haspopup="dialog">看详情</button>
+          <a class="pill" href="https://example.com/" target="_blank" rel="noopener">原文</a>
+        </div>
+      </article>
+      <dialog class="modal detail pub" id="deepDetail-N" aria-labelledby="deepDetailTitle-N">
+        <div class="detail-head">
+          <h3 id="deepDetailTitle-N">长文标题</h3>
+          <button type="button" class="pill" data-close autofocus>关闭</button>
+        </div>
+        <!-- 在此放入静态全文正文（含信源）。 -->
+        <p class="src"><a href="posts/N/">在独立页打开</a></p>
+      </dialog>
+    </template>
   </section>
 
   <div class="zig teal"></div>
@@ -309,6 +351,7 @@
       <p class="pool-note">状态来自仓库订单箱（GitHub Issues）：待接单 → 已接单 → 生产中 → 已发布。点订单标题可查看详情。</p>
       <ul class="feed" id="feedList"></ul>
       <div class="feed-empty" id="feedEmpty">动态列表是空的。加一条信源进来，它会出现在这里，等你点单。</div>
+      <button type="button" class="pill feed-more" id="feedMore" data-dialog="feedDialog" aria-haspopup="dialog">查看全部动态（共 0 条）</button>
       <div class="done-cols">
         <div>
           <h3>深度思考成品 · <span class="counts" id="deepCount">0</span></h3>
@@ -321,18 +364,25 @@
       </div>
       <p class="pool-note">已划过 <span class="counts" id="skipCount">0</span> 条。划过只是本页里的忽略动作，不会下单。</p>
     </div>
-    <div class="modal-overlay" id="codeModal" role="dialog" aria-modal="true" aria-labelledby="codeModalTitle">
-      <div class="modal">
-        <h3 id="codeModalTitle">填写邀请码</h3>
-        <p class="m-sub" id="codeModalSub"></p>
-        <input type="text" id="codeInput" placeholder="邀请码" aria-label="邀请码" autocomplete="off">
-        <p class="m-err" id="codeErr"></p>
-        <div class="m-acts">
-          <button type="button" class="m-cancel" id="codeCancel">放弃下单</button>
-          <button type="button" class="m-ok" id="codeOk">提交订单</button>
-        </div>
+    <dialog class="modal detail" id="feedDialog" aria-labelledby="feedDialogTitle">
+      <div class="detail-head">
+        <h3 id="feedDialogTitle">全部动态</h3>
+        <button type="button" class="pill" data-close autofocus>关闭</button>
       </div>
-    </div>
+      <ul class="feed" id="feedAll"></ul>
+      <p class="feed-empty" id="feedAllEmpty">暂无动态。</p>
+      <p class="pool-note" id="feedLimit" hidden>此处显示最新 20 条。</p>
+    </dialog>
+    <dialog class="modal" id="codeModal" aria-labelledby="codeModalTitle">
+      <h3 id="codeModalTitle">填写邀请码</h3>
+      <p class="m-sub" id="codeModalSub"></p>
+      <input type="text" id="codeInput" placeholder="邀请码" aria-label="邀请码" autocomplete="off" autofocus>
+      <p class="m-err" id="codeErr"></p>
+      <div class="m-acts">
+        <button type="button" class="m-cancel" id="codeCancel">放弃下单</button>
+        <button type="button" class="m-ok" id="codeOk">提交订单</button>
+      </div>
+    </dialog>
   </section>
 
   <div class="zig sun"></div>
@@ -382,6 +432,10 @@
   var err = document.getElementById('formErr');
   var feed = document.getElementById('feedList');
   var feedEmpty = document.getElementById('feedEmpty');
+  var feedAll = document.getElementById('feedAll');
+  var feedMore = document.getElementById('feedMore');
+  var feedDialog = document.getElementById('feedDialog');
+  var feedItems = [];
   var deepDone = document.getElementById('deepDone');
   var shareDone = document.getElementById('shareDone');
   var counts = { deep:0, share:0, skip:0 };
@@ -390,8 +444,47 @@
     document.getElementById('deepCount').textContent = counts.deep;
     document.getElementById('shareCount').textContent = counts.share;
     document.getElementById('skipCount').textContent = counts.skip;
-    feedEmpty.style.display = feed.children.length ? 'none' : 'block';
   }
+  function renderFeeds(){
+    var latest = feedItems.slice(0, 20);
+    feed.replaceChildren(...latest.slice(0, 10).map(makeFeedItem));
+    feedAll.replaceChildren(...latest.map(makeFeedItem));
+    feedEmpty.hidden = document.getElementById('feedAllEmpty').hidden = latest.length > 0;
+    document.getElementById('feedLimit').hidden = feedItems.length <= latest.length;
+    feedMore.textContent = '查看全部动态（共 ' + latest.length + ' 条）';
+  }
+  function removeFeedItem(item){
+    var index = feedItems.indexOf(item);
+    if (index === -1) return;
+    var list = feedDialog.open ? feedAll : feed;
+    var restoreFocus = list.contains(document.activeElement);
+    feedItems.splice(index, 1);
+    renderFeeds();
+    if (restoreFocus) {
+      var next = list.children[Math.min(index, list.children.length - 1)];
+      var fallback = feedDialog.open ? feedDialog.querySelector('[data-close]') : feedMore;
+      (next ? next.querySelector('.b-deep') : fallback).focus({preventScroll:true});
+    }
+  }
+  function onBackdropClick(dialog, close){
+    dialog.addEventListener('click', function(e){
+      if (e.target !== dialog) return;
+      var bounds = dialog.getBoundingClientRect();
+      if (e.clientX < bounds.left || e.clientX > bounds.right || e.clientY < bounds.top || e.clientY > bounds.bottom) close();
+    });
+  }
+  document.querySelectorAll('dialog.detail').forEach(function(dialog){
+    function close(){ dialog.close(); }
+    dialog.querySelector('[data-close]').addEventListener('click', close);
+    onBackdropClick(dialog, close);
+  });
+  document.querySelectorAll('button[data-dialog]').forEach(function(button){
+    button.addEventListener('click', function(){
+      var dialog = document.getElementById(button.dataset.dialog);
+      dialog.showModal();
+      dialog.scrollTop = 0;
+    });
+  });
   function dropNone(ul){
     var n = ul.querySelector('.none');
     if (n) n.remove();
@@ -408,57 +501,48 @@
     li.appendChild(t); li.appendChild(br); li.appendChild(a);
     ul.appendChild(li);
   }
-  function makeFeedItem(title, url){
+  function makeFeedItem(item){
     var li = document.createElement('li');
     var t = document.createElement('div');
-    t.className = 't'; t.textContent = title;
+    t.className = 't'; t.textContent = item.title;
     var u = document.createElement('div');
     u.className = 'u';
     var a = document.createElement('a');
-    a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = url;
+    a.href = item.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = item.url;
     u.appendChild(a);
+    var meta = document.createElement('div');
+    meta.className = 'u';
+    meta.textContent = '来自动态 · ' + (item.source || '未知来源') + (item.date ? ' · ' + item.date : '');
     var acts = document.createElement('div');
     acts.className = 'acts';
     function btn(label, cls, fn){
       var b = document.createElement('button');
       b.type = 'button'; b.className = cls; b.textContent = label;
-      b.addEventListener('click', function(){
-        var r = fn();
-        if (r === false || r === 'defer') return;
-        li.remove(); refreshCounts();
-      });
+      b.addEventListener('click', fn);
       return b;
     }
     acts.appendChild(btn('深挖成长文', 'b-deep', function(){
-      openCodeDialog('深挖长文', title, url, li);
-      return 'defer';
+      openCodeDialog('深挖长文', item);
     }));
     acts.appendChild(btn('做成摘要', 'b-share', function(){
-      openCodeDialog('做成摘要', title, url, li);
-      return 'defer';
+      openCodeDialog('做成摘要', item);
     }));
     acts.appendChild(btn('划过', 'b-skip', function(){
       counts.skip++;
+      removeFeedItem(item);
+      refreshCounts();
     }));
-    li.appendChild(t); li.appendChild(u); li.appendChild(acts);
+    li.appendChild(t); li.appendChild(u); li.appendChild(meta); li.appendChild(acts);
     return li;
   }
   fetch('feed.json', { cache: 'no-store' })
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(data){
-      if (!data || !data.items) return;
-      data.items.slice(0, 20).forEach(function(item){
-        if (!item.title || !item.url) return;
-        var li = makeFeedItem(item.title, item.url);
-        if (item.source || item.date) {
-          var meta = document.createElement('div');
-          meta.className = 'u';
-          meta.textContent = '来自动态 · ' + (item.source || '') + (item.date ? ' · ' + item.date : '');
-          li.insertBefore(meta, li.lastChild);
-        }
-        feed.appendChild(li);
+      if (!data || !Array.isArray(data.items)) return;
+      data.items.forEach(function(item){
+        if (item && item.title && item.url) feedItems.push(item);
       });
-      refreshCounts();
+      renderFeeds();
     })
     .catch(function(){ /* 动态清单读不到时，列表保持手动模式 */ });
   form.addEventListener('submit', function(e){
@@ -473,9 +557,9 @@
       return;
     }
     var title = titleInput.value.trim() || parsed.hostname;
-    feed.insertBefore(makeFeedItem(title, parsed.href), feed.firstChild);
+    feedItems.unshift({ title: title, url: parsed.href, source: '手动添加' });
     urlInput.value = ''; titleInput.value = '';
-    refreshCounts();
+    renderFeeds();
   });
   var RELAY_URL = 'https://daily-observation-relay.bonapartechen.workers.dev';
   function orderMsg(text, isErr){
@@ -489,18 +573,17 @@
   var codeInput = document.getElementById('codeInput');
   var codeErr = document.getElementById('codeErr');
   var codeOk = document.getElementById('codeOk');
-  function openCodeDialog(type, title, url, li){
-    pendingOrder = { type: type, title: title, url: url, li: li };
-    document.getElementById('codeModalSub').textContent = type + ' · ' + title;
+  function openCodeDialog(type, item){
+    pendingOrder = { type: type, title: item.title, url: item.url, item: item };
+    document.getElementById('codeModalSub').textContent = type + ' · ' + item.title;
     codeInput.value = '';
     codeErr.style.display = 'none';
     codeOk.disabled = false;
     codeOk.textContent = '提交订单';
-    codeModal.classList.add('open');
-    codeInput.focus();
+    codeModal.showModal();
   }
   function closeCodeDialog(){
-    codeModal.classList.remove('open');
+    codeModal.close();
     pendingOrder = null;
   }
   function codeFail(text){
@@ -511,10 +594,12 @@
     codeInput.select();
   }
   document.getElementById('codeCancel').addEventListener('click', closeCodeDialog);
-  codeModal.addEventListener('click', function(e){ if (e.target === codeModal) closeCodeDialog(); });
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape' && codeModal.classList.contains('open')) closeCodeDialog();
-    if (e.key === 'Enter' && codeModal.classList.contains('open')) { e.preventDefault(); codeOk.click(); }
+  onBackdropClick(codeModal, closeCodeDialog);
+  codeModal.addEventListener('cancel', function(e){ e.preventDefault(); closeCodeDialog(); });
+  codeModal.addEventListener('keydown', function(e){
+    if (e.isComposing) return;
+    if (e.key === 'Escape') { e.preventDefault(); closeCodeDialog(); }
+    if (e.key === 'Enter' && e.target === codeInput) { e.preventDefault(); codeOk.click(); }
   });
   codeOk.addEventListener('click', function(){
     if (!pendingOrder) return;
@@ -532,19 +617,24 @@
       return r.json().catch(function(){ return {}; }).then(function(j){ return { status: r.status, j: j }; });
     }).then(function(res){
       if (res.status === 201 && res.j.ok) {
-        closeCodeDialog();
+        if (pendingOrder === order) {
+          closeCodeDialog();
+          if (feedDialog.open) feedDialog.close();
+        }
         if (order.type === '深挖长文') { counts.deep++; addDone(deepDone, order.title, order.url); }
         else { counts.share++; addDone(shareDone, order.title, order.url); }
-        order.li.remove(); refreshCounts();
+        removeFeedItem(order.item); refreshCounts();
         orderMsg('已下单，订单号 #' + res.j.number + '。全自动流程已排队，上方「我的订单」会同步状态。', false);
         setTimeout(loadOrders, 1500);
+      } else if (pendingOrder !== order) {
+        return;
       } else if (res.status === 403) {
         codeFail('邀请码不对，请重新填写；也可以点「放弃下单」关掉弹窗。');
       } else {
         codeFail('提交失败（' + res.status + '），可以重试，或点「放弃下单」关掉弹窗。');
       }
     }).catch(function(){
-      codeFail('提交失败：网络问题，可以重试，或点「放弃下单」关掉弹窗。');
+      if (pendingOrder === order) codeFail('提交失败：网络问题，可以重试，或点「放弃下单」关掉弹窗。');
     });
   });
   function orderStatus(issue){
