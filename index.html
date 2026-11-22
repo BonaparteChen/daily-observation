@@ -445,6 +445,24 @@
     li.appendChild(t); li.appendChild(u); li.appendChild(acts);
     return li;
   }
+  fetch('feed.json', { cache: 'no-store' })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(data){
+      if (!data || !data.items) return;
+      data.items.forEach(function(item){
+        if (!item.title || !item.url) return;
+        var li = makeFeedItem(item.title, item.url);
+        if (item.source || item.date) {
+          var meta = document.createElement('div');
+          meta.className = 'u';
+          meta.textContent = '来自动态 · ' + (item.source || '') + (item.date ? ' · ' + item.date : '');
+          li.insertBefore(meta, li.lastChild);
+        }
+        feed.appendChild(li);
+      });
+      refreshCounts();
+    })
+    .catch(function(){ /* 动态清单读不到时，列表保持手动模式 */ });
   form.addEventListener('submit', function(e){
     e.preventDefault();
     err.style.display = 'none';
