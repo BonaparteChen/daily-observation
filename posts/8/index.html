@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>黎曼猜想的 Lean 证明通过多重机器复核，数学家还在拆解它｜每日观察 · 深度思考</title>
+<style>
+:root{
+--coral:#ff5a4e; --teal:#0e9594; --sun:#ffc531; --pink:#ff8fb2;
+--bg:#fff6e9; --surface:#fffdf7; --ink:#1d1a16; --muted:#6f675c;
+--border:#1d1a16; --dot:rgba(29,26,22,.10);
+--shadow:6px 6px 0 rgba(29,26,22,.9);
+}
+@media (prefers-color-scheme: dark){
+:root{ --bg:#171512; --surface:#221f1b; --ink:#f5ecdd; --muted:#b8ab98;
+--border:#f5ecdd; --dot:rgba(245,236,221,.10); --shadow:6px 6px 0 rgba(0,0,0,.85);}
+}
+*{box-sizing:border-box}
+body{margin:0; color:var(--ink); background-color:var(--bg);
+background-image:radial-gradient(var(--dot) 1.6px, transparent 1.7px);
+background-size:22px 22px;
+font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+line-height:1.85; font-size:16.5px}
+main{max-width:780px; margin:0 auto; padding:34px 20px 70px}
+a{color:var(--teal); font-weight:700}
+.back{display:inline-block; margin-bottom:22px; text-decoration:none;
+border:2.5px solid var(--border); border-radius:999px; padding:2px 14px;
+background:var(--surface); color:var(--ink); font-weight:800; font-size:14px;
+box-shadow:3px 3px 0 rgba(29,26,22,.8)}
+.tag{display:inline-block; font-size:12.5px; font-weight:800; padding:1px 10px;
+border:2.5px solid var(--border); border-radius:999px; background:var(--coral);
+color:#fff; transform:rotate(-1.5deg); margin-bottom:12px}
+h1{font-size:clamp(25px,4.6vw,36px); line-height:1.35; margin:0 0 14px}
+.meta{color:var(--muted); font-size:14px; margin:0 0 20px}
+.lede{font-size:18px; font-weight:600; border-left:6px solid var(--sun);
+padding:4px 0 4px 16px; margin:0 0 26px}
+h2{font-size:21px; margin:34px 0 10px; text-decoration:underline wavy var(--sun) 3px;
+text-underline-offset:6px}
+p{margin:10px 0}
+ul{margin:8px 0; padding-left:22px}
+li{margin:6px 0}
+figure.plan{background:var(--surface); border:3px solid var(--border); border-radius:18px;
+box-shadow:var(--shadow); padding:20px 22px; margin:24px 0}
+figure.plan figcaption{color:var(--muted); font-size:14px; margin-top:8px}
+.src-list{font-size:14.5px}
+.src-list li{margin:8px 0; overflow-wrap:anywhere}
+.note{color:var(--muted); font-size:14px}
+footer{margin-top:44px; color:var(--muted); font-size:13.5px}
+</style>
+</head>
+<body>
+<main>
+<a class="back" href="../../">← 回每日观察首页</a><br>
+<span class="tag">深度思考 · 订单 #8</span>
+<h1>黎曼猜想的 Lean 证明通过多重机器复核，数学家还在拆解它</h1>
+<p class="meta">原始信源：Scientific American／Clara Moskowitz，初版 2026-11-20，2026-11-21 16:45 UTC 更新<br>
+<a href="https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/" target="_blank" rel="noopener">https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/</a> · 成稿 2026-11-22</p>
+
+<p class="lede">Lean 与 Mathlib 社区认证了黎曼猜想的形式化陈述和证明，但公开材料还没有显示有人读懂了完整论证，克雷数学研究所也仍把这个问题列为未解决。[S4][S10][S15]</p>
+
+<figure class="plan">
+<strong>主图方案</strong>：一张横版三栏图，三栏分别写「机器复核」「人类解读」「奖项审议」；各栏列出可核查的状态，不用进度条或箭头暗示必然走向。
+<figcaption><strong>图注</strong>：多套机器检验已经通过，完整论证仍待解读，千禧年奖另有审议门槛。示意图，非现场、非实拍。<br>
+<strong>Alt</strong>：三栏分别标注机器复核已有通过记录、人类尚无完整解读、克雷仍列未解决。<br>
+<strong>权利与来源</strong>：《每日观察》编辑部拟原创绘制，信息依据 [S4][S5][S10][S15]；不使用第三方图片、网页截图或机构标识。</figcaption>
+</figure>
+
+<h2>四页说明之外，公开的是一套代码</h2>
+<p>11 月 20 日，数论研究者、Anthropic 员工 Levent Alpöge 在个人网站放出四页说明和十四个分卷的 Lean 源码。他说自己与 Claude 合作，找到了黎曼猜想的一条证明路线；四页里写了方向、分工和一份研发时间线，却没有把推导写成论文。本轮材料未见该证明的 arXiv 预印本或期刊论文，也没有传统同行评审完成的记录。任何人可以下载的是形式化代码，不是供数学家从头读到尾的手稿。[S3][S5][S8]</p>
+<p>经典的黎曼猜想说，黎曼 ζ 函数的非平凡零点都落在复平面上实部为二分之一的直线上。它之所以与素数有关，是因为这些零点关系到实际的素数个数会偏离平均分布所给估计多少。提交受检的五个主定理中，前两个是经典猜想及其等价表述，另三个针对狄利克雷 L 函数：覆盖所有模和所有狄利克雷特征，但不包括 Dedekind ζ 函数、Hecke L 函数和一般自守 L 函数。少了这句限定，「广义」很容易被误读成适用于所有 L 函数。[S5][S14]</p>
+<p>代码规模有两种数法。社区对归档里全部 <code>.lean</code> 文件的统计是 17,374,215 行，共 175,187 个文件；James Shore 沿五个主定理的证明依赖往回查，数到 10,737,728 行位于实际引用的声明内。前者是收到的源码体量，后者是受检结论用到的声明所在的源码行数；后者也不等于有这么多行原创数学，更不是人类读懂证明所需的最短篇幅。[S14]</p>
+<h2>多套工具核过的是同一道题</h2>
+<p>编译成功只是第一关。系统可以接受一套推导，但读者还得知道推导的终点是不是原来那道题。复核者为此另写了一个只导入数学库 Mathlib 的文件，把待证命题放进去，不从提交者的代码里拿定义。两套比对工具 <code>con-leche --compare</code> 和 <code>con-ron --compare</code> 均确认，提交证明匹配五条独立写下的陈述。麻省理工学院数学家 Andrew Sutherland 的审计也列明，五个主定理只依赖 <code>propext</code>、<code>Classical.choice</code> 和 <code>Quot.sound</code> 三条标准公理，没有另外把待证结论当成前提。[S4][S5]</p>
+<p>第二个问题是，检查是否只在原作者的机器或某一个版本的内核上有效。Sutherland 在另一台机器上隔离重编，所得证明导出与已公布的版本逐字节一致；芬兰 LUMI 超算上的复现和 Hertaspace 的独立编译也有完成记录。原生 <code>leanchecker</code> 对编译模块的重放通过，<code>nanoda</code> 和 <code>con-leche</code> 接受了全量导出，<code>lean4lean</code> 也逐模块通过，其中五个模块上调步数上限后才过。多套实现接受同一批证明项，比原提交能编译多提供了一层证据。[S5][S14]</p>
+<p>Sutherland 还换了一个核验角度：把提交与第三方仓库 <code>Robin1984</code> 的形式化结果接起来，得到 Robin 和 Lagarias 两条关于除数和的不等式，经 <code>con-leche</code>、<code>con-ron</code> 和 <code>nanoda</code> 接受。这两个结论的表述里不出现 ζ 函数，因而不只是换个地方复述同一个符号定义。它不是第二份独立的黎曼猜想证明，仍用到了原提交与该仓库的等价性结果，也依赖 Mathlib 对除数和等对象的定义。[S5]</p>
+<h2>报道删掉了「几乎」，技术页还留着「运行中」</h2>
+<p>《科学美国人》11 月 20 日的初版把结论写作「almost certainly true」；当时报道已经有 Sutherland 的独立编译和内核复查，也记录了 Kevin Buzzard 对进一步比对的期待。次日 13:55 UTC，Lean 与 Mathlib 社区发表由 Lean FRO 和 Mathlib Initiative 背书的联合声明，认证经典黎曼猜想的形式化陈述及证明正确。16:45 UTC，报道把标题改成「is true」，导语也去掉了「almost」。旧措辞留在链接地址里，不是当前标题。[S1][S4] 《卫报》把「两家组织核验」写进标题，强调的是谁做了验证。[S11] 《自然》仍把两份方案写成有待严格检验的主张。[S8] 《科学》的标题则问：AI 可能解出了这道题，但人类能理解答案吗？[S9] 半岛电视台在联合声明前用问句作标题，追问的是完整论证有没有人读过。[S10]</p>
+<p>更新版还有一句：“That run has now been completed.” 但 Sutherland 的状态页截至 2026-11-22 14:10 UTC 仍写明：Lean v4.36.0 的 <code>lake comparator</code> 有一次运行已通过陈述比对和公理检查；对约 61.57 GB 证明导出的单线程默认内核和 paranoid 内核重放仍在进行，没有判定。报道没有标出它指的是哪一次运行，本轮未能核实两者是否指同一任务。这也不是内核拒绝了证明：其他检查已有通过记录。编辑判断是：标题删掉「几乎」有新的证据支撑，但标题的确定性走在这项端到端复核的完成记录前面，不能让一句「已完成」代替分项状态。[S1][S4][S5]</p>
+<h2>机器确认推导之后，解释仍要有人写</h2>
+<p>帝国理工学院数学家 Buzzard 告诉半岛电视台：“At the minute, we don’t even know why the theorem is true”。他还说，当时甚至很难区分哪些部分是新想法，哪些只是机器补写的常规数学。作者也说，公开时自己尚未掌握论证涉及的大量数学；他在说明第二页脚注提到非正式英文稿超过二十五万页，没有发布。机器能检查某个引理是否足以让下一步成立，但检查结果本身不会指出哪个引理值得别的研究者拿去解另一道题。[S3][S10] 据《科学》报道，数论学者 Maksym Radziwill 批评这种发布方式把拆解证明的工作留给了不会因此得到认可的人。[S9]</p>
+<p>这也不是 Claude 独立完成的工作。按 Alpöge 的自述，他先选定把两种想法接起来的方向，再把一个简化模型里的做法引到目标场景；Claude 在最后阶段大幅加速。与他合作过的数学家 Tristan Buckmaster 对《自然》强调，研究设置是 Alpöge 自己搭出来的；数论学者 Abhishek Saha 也反对把功劳只给 Claude。至于 Andrew Granville 对四页说明质量和发布时机的质疑（Anthropic 前一日刚完成 IPO）[S8]，Alpöge 在说明里否认了把动机归结为上市时机的解释；两边的说法都不能替代对代码和论证的检查。[S3][S8][S10]</p>
+<p>同一天，美国数学会主席 Ravi Vakil 公开了斯坦福博士后 Alessandro Masullo 的 940 页人类草稿，声称覆盖所有数域和酉 Hecke 特征，范围与 Alpöge 提交不同。约八小时后，Vakil 更新说，有人借助不同 AI 模型发现了拟议证明中的问题；参与阅稿的 Brian Conrad 说文稿正在大改。一个有文本可逐段指出问题，另一个有代码可复核逻辑，两种载体解决的是不同难题。草稿能读，不等于结论过关；代码过关，也不等于已经有一份别人能接手的解释。[S16]</p>
+<h2>限制与未确认事项</h2>
+<p><strong>已发生</strong>的是作者公开源码和说明、媒体随后改题；<strong>已宣布</strong>的是两个社区对形式化正确性的认证，不是数学界的集体表决；<strong>已通过</strong>的是日志里有结果的复编、陈述比对、公理检查和多内核复核，不包括上述仍在运行的两项单线程重放。<strong>预期</strong>则包括 Alpöge 希望简化论证、写出可读版本，并将方法推广到扩展黎曼猜想；这些没有交付日期，也不属于本轮验证结果。[S1][S3][S4][S5]</p>
+<p>机器校验仍以标准公理相容、Mathlib 定义符合原问题以及所用内核可靠为前提。多份结果降低了单一实现出错的风险，不能排除共用定义或底层假设带来的问题。提交锁定的 Lean <code>v4.33.1</code> 早于 <code>v4.34.1</code> 的内核运行时修复，因此社区只把在原版本编译通过视为有限证据，复判以 <code>v4.36.0</code> 和独立内核的检查为准。[S14] Claude 的具体版本和算力成本未核实：作者的说明和可核报道都没有披露。Sutherland 列的是复跑不同检查所需的资源，那不是生成证明的账单，也不能据此估算研究的总开销。至本轮能核到的公开记录，完整的人类解读和传统同行评审都未获确认。[S3][S4][S5][S10]</p>
+<p>克雷数学研究所仍把黎曼猜想列作未解决。其规则是，拟议解答须发表于规则 §6 界定的合格出版物（本轮未取得 §6 的定义）；发表后至少满两年，还须获得全球数学界普遍接受，研究所才会考虑。两年不从上传源码起算，官网分类也不能拿来否定已通过的机器检验。[S15]</p>
+<h2>下一步要看谁能用上这份证明</h2>
+<p><strong>普通读者</strong>转述时，可以保留「Lean 形式化证明已通过多重复核」，不要省掉「形式化」。以后看到「已经跑完」的新消息，先看验证页的版本、时间和对应行；关心千禧年奖，则看克雷的名单和合资格发表记录，而不是追报道的标题更新。[S5][S15]</p>
+<p><strong>年轻数论研究者和审稿人</strong>可以从有明确输入与结论的一组引理切入，先画出依赖，再写一页不借助代码也能讨论的推导。若进入审稿，一张把论文命题、库定义和机器检查结果逐项对应的表，比再附整套输出更有用；也应记录谁找到简化、谁写出解释，让整理证明的人有清楚的署名依据。</p>
+<p><strong>做形式化与自动定理证明的 AI 团队</strong>可以把证明生成和验证分开发布：固定工具版本，单独公布待证陈述和公理清单，随同独立重跑记录提供最小可复核单元。还可以单列一项交付：哪几个引理决定了路线、哪些是库里已有的工具、哪些值得人接着简化。这样，下一组人既不必仅凭作者的运行结果相信它，也不用先读完整个代码库才知道从哪开始。</p>
+
+<h2>来源清单｜来源与日期</h2>
+<ul class="src-list">
+<li>[S1] Scientific American／Clara Moskowitz，<em>The AI Riemann hypothesis proof is true, independent mathematicians confirm</em>，2026-11-20 刊发，2026-11-21 16:45 UTC 更新；初版标题据检索缓存、链接路径及 Papex 的早期引述。<a href="https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/" target="_blank" rel="noopener">https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/</a></li>
+<li>[S3] Levent Alpöge 个人网站，四页说明 <code>remark.pdf</code>，2026-11-20；分卷入口见 PDF 第 1 页脚注。<a href="https://alpo.ge/remark.pdf" target="_blank" rel="noopener">https://alpo.ge/remark.pdf</a></li>
+<li>[S4] Lean 与 Mathlib 社区，<em>Lean verification of the Riemann Hypothesis</em>，2026-11-21 13:55 UTC。<a href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/" target="_blank" rel="noopener">https://leanprover-community.github.io/blog/posts/riemann-hypothesis/</a></li>
+<li>[S5] Andrew Sutherland（MIT），<em>Verification files for the Lean proof of the Riemann Hypothesis</em>，2026-11-20 起记录，状态页更新至 2026-11-22 14:10 UTC。<a href="https://math.mit.edu/~drew/grh/" target="_blank" rel="noopener">https://math.mit.edu/~drew/grh/</a></li>
+<li>[S8] Nature／Davide Castelvecchi，<em>Mathematicians astounded by AI and human-written proofs of iconic Riemann hypothesis</em>，2026-11-20 刊发，2026-11-21 更新。<a href="https://www.nature.com/articles/d41586-026-03812-7" target="_blank" rel="noopener">https://www.nature.com/articles/d41586-026-03812-7</a></li>
+<li>[S9] Science（AAAS）／Zack Savitsky，<em>AI may have solved math’s greatest mystery. Can humans understand the answer?</em>，2026-11-20（美东时间）。<a href="https://www.science.org/content/article/ai-may-have-solved-math-s-greatest-mystery-can-humans-understand-answer" target="_blank" rel="noopener">https://www.science.org/content/article/ai-may-have-solved-math-s-greatest-mystery-can-humans-understand-answer</a></li>
+<li>[S10] Al Jazeera／Heba Habib，<em>Riemann hypothesis: Has the world’s most famous maths problem been cracked?</em>，2026-11-21 刊发并更新。<a href="https://www.aljazeera.com/news/2026/11/21/riemann-hypothesis-has-the-worlds-most-famous-maths-problem-been-cracked" target="_blank" rel="noopener">https://www.aljazeera.com/news/2026/11/21/riemann-hypothesis-has-the-worlds-most-famous-maths-problem-been-cracked</a></li>
+<li>[S11] The Guardian／José Olivares，<em>Two groups verify mathematician’s claim that Claude helped prove mathematics problem</em>，2026-11-21 刊发，2026-11-22 更新。<a href="https://www.theguardian.com/technology/2026/nov/21/anthropic-riemann-hypothesis-solved-claude-ai" target="_blank" rel="noopener">https://www.theguardian.com/technology/2026/nov/21/anthropic-riemann-hypothesis-solved-claude-ai</a></li>
+<li>[S14] 代码审计及独立复编记录，2026-11-20 至 2026-11-21：Lean 社区 <a href="https://github.com/leanprover-community/riemann-hypothesis/blob/main/verification/NOTES.md" target="_blank" rel="noopener">NOTES.md</a>；James Shore <a href="https://github.com/james-shore/rh-proof-dependencies" target="_blank" rel="noopener">依赖统计</a>；Aapo Lipponen <a href="https://github.com/aapolipponen/rh-lean-check-lumi" target="_blank" rel="noopener">LUMI 复编</a>；<a href="https://github.com/Hertaspace/alpoge-rh-lean-verification" target="_blank" rel="noopener">Hertaspace 复编</a>。</li>
+<li>[S15] Clay Mathematics Institute，千禧年难题<a href="https://www.claymath.org/millennium-problems/" target="_blank" rel="noopener">列表</a>（2026-11-22 查阅）及<a href="https://www.claymath.org/millennium-problems/rules/" target="_blank" rel="noopener">奖项规则</a>（2018-09-26 修订）。</li>
+<li>[S16] Papex，<em>Has the Riemann hypothesis been solved? Alpöge’s Claude and Lean claim, and what is checked</em>，2026-11-21，含 Masullo 草稿范围与 Conrad 回应。<a href="https://papex.org/blog/riemann-hypothesis-alpoge-claude-lean-proof" target="_blank" rel="noopener">https://papex.org/blog/riemann-hypothesis-alpoge-claude-lean-proof</a> ；并对照 Ravi Vakil 于 2026-11-20 发布、约八小时后补记的<a href="https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/" target="_blank" rel="noopener">公告及内嵌草稿</a>。</li>
+</ul>
+
+<p class="note"><strong>素材与核验说明</strong>：初版标题与导语依据检索缓存、原文 URL 路径及 Papex 早期引述，初版 HTML 未留存。<br>
+Science.org 直连受阻，S9 仅据检索接口返回的页面片段核对，正文只作转述。Lean Zulip 讨论串需登录，Buzzard 引语取自媒体转引；Claude 的具体版本与算力成本未披露。</p>
+
+<footer>每日观察 · 深度思考 ｜ 订单 #8 ｜ 原始信源：<a href="https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/" target="_blank" rel="noopener">Scientific American · Clara Moskowitz</a></footer>
+</main>
+</body>
+</html>
