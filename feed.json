@@ -2,6 +2,12 @@
   "items": [
     {
       "date": "2026-11-23",
+      "source": "什么值得买",
+      "title": "森海塞尔消费业务二度挂牌，大馒头5到手2500、4代973元",
+      "url": "https://post.smzdm.com/p/am9v504z/"
+    },
+    {
+      "date": "2026-11-23",
       "source": "AI Agent Minihub",
       "title": "整个系统压成几百行笔记，换会话不用从头再读",
       "url": "https://www.jstai.cn/jstai-news-2026-11-22-codebase-index-few-hundred-lines-handover.html"
@@ -113,13 +119,7 @@
       "source": "量子位",
       "title": "DeepSeek V1 作者创业做开源 Agent Linger",
       "url": "https://www.qbitai.com/2026/11/511570.html"
-    },
-    {
-      "date": "2026-11-22",
-      "source": "科技行者",
-      "title": "OpenGCUA：让 AI 自己写代码操作电脑",
-      "url": "https://www.techwalker.com/2026/1120/3206588.shtml"
     }
   ],
-  "updated_at": "2026-11-23T11:27:00+08:00"
+  "updated_at": "2026-11-23T13:27:00+08:00"
 }
