@@ -2,6 +2,12 @@
   "items": [
     {
       "date": "2026-11-23",
+      "source": "B站",
+      "title": "数千AI智能体32分钟读完小鼠全脑图谱，还提出新假设",
+      "url": "https://www.bilibili.com/video/BV1Apy3zAEi9"
+    },
+    {
+      "date": "2026-11-23",
       "source": "搜狐",
       "title": "MiniMax 内部模型攻破多个前沿密码方案",
       "url": "https://www.sohu.com/a/1105251647_122014422"
@@ -113,13 +119,7 @@
       "source": "少数派",
       "title": "FoloToy 的 AI 硬件被用户玩出 2000 多种用法",
       "url": "https://sspai.com/post/119318"
-    },
-    {
-      "date": "2026-11-22",
-      "source": "少数派",
-      "title": "OPPO Reno17 Pro 背板藏了只立体小猫",
-      "url": "https://sspai.com/post/119287"
     }
   ],
-  "updated_at": "2026-11-23T17:27:00+08:00"
+  "updated_at": "2026-11-23T19:27:00+08:00"
 }
