@@ -2,6 +2,12 @@
   "items": [
     {
       "date": "2026-11-23",
+      "source": "AI Agent Minihub",
+      "title": "整个系统压成几百行笔记，换会话不用从头再读",
+      "url": "https://www.jstai.cn/jstai-news-2026-11-22-codebase-index-few-hundred-lines-handover.html"
+    },
+    {
+      "date": "2026-11-23",
       "source": "IT之家",
       "title": "英伟达董事会：无意让黄仁勋回归任CEO",
       "url": "https://www.ithome.com/1/028/580.htm"
@@ -113,13 +119,7 @@
       "source": "科技行者",
       "title": "OpenGCUA：让 AI 自己写代码操作电脑",
       "url": "https://www.techwalker.com/2026/1120/3206588.shtml"
-    },
-    {
-      "date": "2026-11-22",
-      "source": "36氪",
-      "title": "B站 AI 长视频三期总播放超 1100 万",
-      "url": "https://www.36kr.com/p/3565253121964935"
     }
   ],
-  "updated_at": "2026-11-23T09:28:00+08:00"
+  "updated_at": "2026-11-23T11:27:00+08:00"
 }
