@@ -2,6 +2,12 @@
   "items": [
     {
       "date": "2026-11-23",
+      "source": "OpenAI",
+      "title": "OpenAI 提议给前沿模型设共同限值",
+      "url": "https://openai.com/index/perplexity-and-intelligence/"
+    },
+    {
+      "date": "2026-11-23",
       "source": "什么值得买",
       "title": "森海塞尔消费业务二度挂牌，大馒头5到手2500、4代973元",
       "url": "https://post.smzdm.com/p/am9v504z/"
@@ -113,13 +119,7 @@
       "source": "中央社",
       "title": "余承东改口：开车不能睡觉",
       "url": "https://www.cna.com.tw/news/acn/202611210123.aspx"
-    },
-    {
-      "date": "2026-11-22",
-      "source": "量子位",
-      "title": "DeepSeek V1 作者创业做开源 Agent Linger",
-      "url": "https://www.qbitai.com/2026/11/511570.html"
     }
   ],
-  "updated_at": "2026-11-23T13:27:00+08:00"
+  "updated_at": "2026-11-23T15:27:00+08:00"
 }
