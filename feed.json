@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "date": "2026-11-25",
+      "source": "格隆汇",
+      "title": "Anthropic 跌破 IPO 发行价",
+      "url": "https://cn.tradingview.com/news/gelonghui:13e759f25e3f9:0/"
+    },
+    {
       "date": "2026-11-24",
       "source": "少数派",
       "title": "Aqara 落地灯 T1 609 元，支持 Matter 直连 Apple Home",
@@ -113,13 +119,7 @@
       "source": "小王Albert",
       "title": "小王Albert：90分钟中美俄会晤摆了哪些事上桌",
       "url": "https://www.youtube.com/watch?v=920tQfF1vDo"
-    },
-    {
-      "date": "2026-11-23",
-      "source": "动点科技",
-      "title": "华为 Mate 90 Air 明天发布，最薄 Mate 直板机",
-      "url": "https://cn.technode.com/post/2026-11-19/huawei-mate-90-air-announcement/"
     }
   ],
-  "updated_at": "2026-11-24T23:31:00+08:00"
+  "updated_at": "2026-11-25T01:28:00+08:00"
 }
