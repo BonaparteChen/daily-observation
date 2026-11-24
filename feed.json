@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-11-24T09:27:00+08:00",
+  "updated_at": "2026-11-24T11:27:00+08:00",
   "items": [
+    {
+      "title": "Claude Ship 接管 PR 的审修批",
+      "url": "https://claude.com/resources/articles/introducing-claude-ship",
+      "source": "Anthropic",
+      "date": "2026-11-24"
+    },
     {
       "title": "OpenAI与Anthropic同日称证伪指数时间假设",
       "url": "https://www.36kr.com/p/4045003727606918",
@@ -114,12 +120,6 @@
       "source": "什么值得买",
       "title": "美的 MB-RC422T 电饭煲到手 216.95 元",
       "url": "https://www.smzdm.com/p/186557543/"
-    },
-    {
-      "date": "2026-11-22",
-      "source": "睡前消息",
-      "title": "聂辉华：该对机器人征社保税",
-      "url": "https://archive.bedtime.news/main/1001-1100/1007.md"
     }
   ]
 }
