@@ -1,65 +1,64 @@
 {
-  "updated_at": "2026-11-24T21:30:00+08:00",
   "items": [
     {
-      "title": "荣耀 700 系列 3399 元起，背屏能养电子宠物还能测血氧",
-      "url": "http://mobile.it168.com/a2026/1124/6958/000006958886.shtml",
+      "date": "2026-11-24",
+      "source": "少数派",
+      "title": "Aqara 落地灯 T1 609 元，支持 Matter 直连 Apple Home",
+      "url": "https://sspai.com/post/119287"
+    },
+    {
+      "date": "2026-11-24",
       "source": "IT168",
-      "date": "2026-11-24"
+      "title": "荣耀 700 系列 3399 元起，背屏能养电子宠物还能测血氧",
+      "url": "http://mobile.it168.com/a2026/1124/6958/000006958886.shtml"
     },
     {
-      "title": "华为 Mate 90 Air 售价公布，4999 元起",
-      "url": "https://mobile.zol.com.cn/1276/12765040.html",
+      "date": "2026-11-24",
       "source": "中关村在线",
-      "date": "2026-11-24"
+      "title": "华为 Mate 90 Air 售价公布，4999 元起",
+      "url": "https://mobile.zol.com.cn/1276/12765040.html"
     },
     {
-      "title": "Cisco 与 OpenAI 联合推出开源 Shirudo",
-      "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-and-openai-launch-shirudo-a-new-project-to-safeguard-agentic-ai.html",
+      "date": "2026-11-24",
       "source": "Cisco",
-      "date": "2026-11-24"
+      "title": "Cisco 与 OpenAI 联合推出开源 Shirudo",
+      "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-and-openai-launch-shirudo-a-new-project-to-safeguard-agentic-ai.html"
     },
     {
-      "title": "鸿蒙终端设备数突破1亿台",
-      "url": "https://www.news.cn/tech/20261124/c1449f3e0fe24233a97e58d967b8a5f0/c.html",
+      "date": "2026-11-24",
       "source": "新华社",
-      "date": "2026-11-24"
+      "title": "鸿蒙终端设备数突破1亿台",
+      "url": "https://www.news.cn/tech/20261124/c1449f3e0fe24233a97e58d967b8a5f0/c.html"
     },
     {
-      "title": "Claude Ship 接管 PR 的审修批",
-      "url": "https://claude.com/resources/articles/introducing-claude-ship",
+      "date": "2026-11-24",
       "source": "Anthropic",
-      "date": "2026-11-24"
+      "title": "Claude Ship 接管 PR 的审修批",
+      "url": "https://claude.com/resources/articles/introducing-claude-ship"
     },
     {
-      "title": "OpenAI与Anthropic同日称证伪指数时间假设",
-      "url": "https://www.36kr.com/p/4045003727606918",
+      "date": "2026-11-24",
       "source": "36氪",
-      "date": "2026-11-24"
+      "title": "OpenAI与Anthropic同日称证伪指数时间假设",
+      "url": "https://www.36kr.com/p/4045003727606918"
     },
     {
-      "title": "DeepSeek Harness v0.2.3-alpha.1 新增七类连接器",
-      "url": "https://eogee.com/article/413",
+      "date": "2026-11-24",
       "source": "eogee",
-      "date": "2026-11-24"
+      "title": "DeepSeek Harness v0.2.3-alpha.1 新增七类连接器",
+      "url": "https://eogee.com/article/413"
     },
     {
-      "title": "智谱发布 750B 循环架构旗舰 GLM-5.4",
-      "url": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model/",
+      "date": "2026-11-24",
       "source": "The Decoder",
-      "date": "2026-11-24"
+      "title": "智谱发布 750B 循环架构旗舰 GLM-5.4",
+      "url": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model/"
     },
     {
-      "title": "华为 Mate 90 Air 薄至 6.58mm，搭载麒麟 9020",
-      "url": "https://news.mydrivers.com/1/1167/1167708.htm",
+      "date": "2026-11-24",
       "source": "快科技",
-      "date": "2026-11-24"
-    },
-    {
-      "title": "黄仁勋复任英伟达 CEO",
-      "url": "https://techcrunch.com/2026/11/23/nvidia-reverses-course-and-brings-jensen-huang-back-as-ceo/",
-      "source": "TechCrunch",
-      "date": "2026-11-24"
+      "title": "华为 Mate 90 Air 薄至 6.58mm，搭载麒麟 9020",
+      "url": "https://news.mydrivers.com/1/1167/1167708.htm"
     },
     {
       "date": "2026-11-23",
@@ -72,12 +71,6 @@
       "source": "连云港传媒网",
       "title": "手机平板国补最高补500元",
       "url": "http://www.lyg1.com/lyg/2026-11-23/Qw86FEFRw77nkTTb.html"
-    },
-    {
-      "date": "2026-11-23",
-      "source": "B站",
-      "title": "数千AI智能体32分钟读完小鼠全脑图谱，还提出新假设",
-      "url": "https://www.bilibili.com/video/BV1Apy3zAEi9"
     },
     {
       "date": "2026-11-23",
@@ -117,9 +110,16 @@
     },
     {
       "date": "2026-11-23",
-      "source": "少数派",
-      "title": "少数派邀你给 Apple 的 2026 年打分",
-      "url": "https://sspai.com/post/119191"
+      "source": "小王Albert",
+      "title": "小王Albert：90分钟中美俄会晤摆了哪些事上桌",
+      "url": "https://www.youtube.com/watch?v=920tQfF1vDo"
+    },
+    {
+      "date": "2026-11-23",
+      "source": "动点科技",
+      "title": "华为 Mate 90 Air 明天发布，最薄 Mate 直板机",
+      "url": "https://cn.technode.com/post/2026-11-19/huawei-mate-90-air-announcement/"
     }
-  ]
+  ],
+  "updated_at": "2026-11-24T23:31:00+08:00"
 }
