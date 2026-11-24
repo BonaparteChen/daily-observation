@@ -2,6 +2,12 @@
   "items": [
     {
       "date": "2026-11-25",
+      "source": "The Register",
+      "title": "CrowdStrike 439亿美元收购 Zscaler，客户先担心续费",
+      "url": "https://www.theregister.com/security/2026/11/24/crowdstrike-splashes-44b-on-zscaler-customers-brace-for-the-bill/5311877"
+    },
+    {
+      "date": "2026-11-25",
       "source": "少数派",
       "title": "迪卡侬 Fold 560 官方二手 1949.9 元",
       "url": "https://sspai.com/post/119492"
@@ -113,13 +119,7 @@
       "source": "IT之家",
       "title": "英伟达董事会：无意让黄仁勋回归任CEO",
       "url": "https://www.ithome.com/1/028/580.htm"
-    },
-    {
-      "date": "2026-11-23",
-      "source": "少数派",
-      "title": "iPhone Duo 壳膜先涨价",
-      "url": "https://sspai.com/post/119184"
     }
   ],
-  "updated_at": "2026-11-25T03:27:00+08:00"
+  "updated_at": "2026-11-25T05:29:24+08:00"
 }
