@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-11-24T13:29:09+08:00",
+  "updated_at": "2026-11-24T15:31:01+08:00",
   "items": [
+    {
+      "title": "Cisco 与 OpenAI 联合推出开源 Shirudo",
+      "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-and-openai-launch-shirudo-a-new-project-to-safeguard-agentic-ai.html",
+      "source": "Cisco",
+      "date": "2026-11-24"
+    },
     {
       "title": "鸿蒙终端设备数突破1亿台",
       "url": "https://www.news.cn/tech/20261124/c1449f3e0fe24233a97e58d967b8a5f0/c.html",
@@ -114,12 +120,6 @@
       "source": "动点科技",
       "title": "华为 Mate 90 Air 明天发布，最薄 Mate 直板机",
       "url": "https://cn.technode.com/post/2026-11-19/huawei-mate-90-air-announcement/"
-    },
-    {
-      "date": "2026-11-23",
-      "source": "IT之家",
-      "title": "B站就AI“大肥鱼”智能体账号泛滥发问卷征治理意见",
-      "url": "https://www.ithome.com/1/030/702.htm"
     }
   ]
 }
