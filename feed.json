@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "title": "浮屏把截图变成锁屏卡片",
+      "url": "https://sspai.com/a/nqBa3J",
+      "source": "少数派",
+      "date": "2026-11-26"
+    },
+    {
       "title": "陈睿：B站是 AI 时代最受益的平台之一",
       "url": "https://www.ithome.com/1/031/942.htm",
       "source": "IT之家",
@@ -113,13 +119,7 @@
       "source": "中关村在线",
       "title": "华为 Mate 90 Air 售价公布，4999 元起",
       "url": "https://mobile.zol.com.cn/1276/12765040.html"
-    },
-    {
-      "date": "2026-11-24",
-      "source": "Cisco",
-      "title": "Cisco 与 OpenAI 联合推出开源 Shirudo",
-      "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-and-openai-launch-shirudo-a-new-project-to-safeguard-agentic-ai.html"
     }
   ],
-  "updated_at": "2026-11-26T05:27:00+08:00"
+  "updated_at": "2026-11-26T07:27:00+08:00"
 }
