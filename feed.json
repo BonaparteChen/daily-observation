@@ -2,6 +2,18 @@
   "items": [
     {
       "date": "2026-11-25",
+      "source": "少数派",
+      "title": "Palm Pre：内藏「划时代」系统的手机",
+      "url": "https://sspai.com/post/118791"
+    },
+    {
+      "date": "2026-11-25",
+      "source": "少数派",
+      "title": "Yab：开源双内核浏览器，给舍不得 Arc 的你",
+      "url": "https://sspai.com/post/119310"
+    },
+    {
+      "date": "2026-11-25",
       "source": "什么值得买",
       "title": "双11扫地机器人攻略：入门从1998元起",
       "url": "https://post.smzdm.com/p/a3mxx2vd/"
@@ -107,19 +119,7 @@
       "source": "eogee",
       "title": "DeepSeek Harness v0.2.3-alpha.1 新增七类连接器",
       "url": "https://eogee.com/article/413"
-    },
-    {
-      "date": "2026-11-24",
-      "source": "The Decoder",
-      "title": "智谱发布 750B 循环架构旗舰 GLM-5.4",
-      "url": "https://the-decoder.com/z-ai-follows-openai-into-loop-transformer-territory-with-its-new-750b-flagship-model/"
-    },
-    {
-      "date": "2026-11-24",
-      "source": "快科技",
-      "title": "华为 Mate 90 Air 薄至 6.58mm，搭载麒麟 9020",
-      "url": "https://news.mydrivers.com/1/1167/1167708.htm"
     }
   ],
-  "updated_at": "2026-11-25T19:28:10+08:00"
+  "updated_at": "2026-11-25T21:28:22+08:00"
 }
