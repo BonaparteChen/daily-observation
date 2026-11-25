@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "title": "神舟二十四号发射成功，两个乘组太空会师",
+      "url": "https://tv.cctv.com/2026/11/25/VIDEsd50AO2bTxaF5lTbFBva261125.shtml",
+      "source": "央视网",
+      "date": "2026-11-26"
+    },
+    {
       "date": "2026-11-25",
       "source": "IT之家",
       "title": "AI5 优先给 Optimus，汽车继续用 AI4",
@@ -113,13 +119,7 @@
       "source": "Anthropic",
       "title": "Claude Ship 接管 PR 的审修批",
       "url": "https://claude.com/resources/articles/introducing-claude-ship"
-    },
-    {
-      "date": "2026-11-24",
-      "source": "36氪",
-      "title": "OpenAI与Anthropic同日称证伪指数时间假设",
-      "url": "https://www.36kr.com/p/4045003727606918"
     }
   ],
-  "updated_at": "2026-11-25T23:29:00+08:00"
+  "updated_at": "2026-11-26T01:27:00+08:00"
 }
