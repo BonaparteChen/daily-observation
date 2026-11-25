@@ -2,6 +2,12 @@
   "items": [
     {
       "date": "2026-11-25",
+      "source": "Hypebeast",
+      "title": "Teenage Engineering 推出首款 CD 播放器 EP/BC-1",
+      "url": "https://hypebeast.cn/2026/11/teenage-engineering-ep-bc-1-first-ever-cd-player-release-info"
+    },
+    {
+      "date": "2026-11-25",
       "source": "科技日报",
       "title": "豆包「小豆」开启邀请制公测",
       "url": "https://www.stdaily.com/web/gdxw/2026-11/24/content_618353.html"
@@ -113,13 +119,7 @@
       "source": "连云港传媒网",
       "title": "手机平板国补最高补500元",
       "url": "http://www.lyg1.com/lyg/2026-11-23/Qw86FEFRw77nkTTb.html"
-    },
-    {
-      "date": "2026-11-23",
-      "source": "搜狐",
-      "title": "MiniMax 内部模型攻破多个前沿密码方案",
-      "url": "https://www.sohu.com/a/1105251647_122014422"
     }
   ],
-  "updated_at": "2026-11-25T12:27:27+08:00"
+  "updated_at": "2026-11-25T13:27:27+08:00"
 }
