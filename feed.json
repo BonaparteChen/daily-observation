@@ -2,6 +2,12 @@
   "items": [
     {
       "date": "2026-11-25",
+      "source": "C114通信网",
+      "title": "陈睿称生成式AI至少让视频产业价值提高10倍",
+      "url": "https://www.c114.net.cn/ainews/151289.html"
+    },
+    {
+      "date": "2026-11-25",
       "source": "少数派",
       "title": "米家智能鱼缸 2 Pro：养鱼更省心，造景更自由",
       "url": "https://go-post.sspai.com/post/119023"
@@ -113,13 +119,7 @@
       "source": "什么值得买",
       "title": "森海塞尔消费业务二度挂牌，大馒头5到手2500、4代973元",
       "url": "https://post.smzdm.com/p/am9v504z/"
-    },
-    {
-      "date": "2026-11-23",
-      "source": "AI Agent Minihub",
-      "title": "整个系统压成几百行笔记，换会话不用从头再读",
-      "url": "https://www.jstai.cn/jstai-news-2026-11-22-codebase-index-few-hundred-lines-handover.html"
     }
   ],
-  "updated_at": "2026-11-25T07:27:27+08:00"
+  "updated_at": "2026-11-25T09:27:27+08:00"
 }
