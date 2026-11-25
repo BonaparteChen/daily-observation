@@ -97,6 +97,12 @@
       "url": "https://news.mydrivers.com/1/1167/1167708.htm"
     },
     {
+      "date": "2026-11-24",
+      "source": "TechCrunch",
+      "title": "黄仁勋复任英伟达 CEO",
+      "url": "https://techcrunch.com/2026/11/23/nvidia-reverses-course-and-brings-jensen-huang-back-as-ceo/"
+    },
+    {
       "date": "2026-11-23",
       "source": "什么值得买",
       "title": "“复刻任意软件”的AI，Star吹大10倍，4个坑是真的",
@@ -113,13 +119,7 @@
       "source": "搜狐",
       "title": "MiniMax 内部模型攻破多个前沿密码方案",
       "url": "https://www.sohu.com/a/1105251647_122014422"
-    },
-    {
-      "date": "2026-11-23",
-      "source": "OpenAI",
-      "title": "OpenAI 提议给前沿模型设共同限值",
-      "url": "https://openai.com/index/perplexity-and-intelligence/"
     }
   ],
-  "updated_at": "2026-11-25T11:27:27+08:00"
+  "updated_at": "2026-11-25T12:27:27+08:00"
 }
