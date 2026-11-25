@@ -2,6 +2,12 @@
   "items": [
     {
       "date": "2026-11-25",
+      "source": "科技日报",
+      "title": "豆包「小豆」开启邀请制公测",
+      "url": "https://www.stdaily.com/web/gdxw/2026-11/24/content_618353.html"
+    },
+    {
+      "date": "2026-11-25",
       "source": "C114通信网",
       "title": "陈睿称生成式AI至少让视频产业价值提高10倍",
       "url": "https://www.c114.net.cn/ainews/151289.html"
@@ -113,13 +119,7 @@
       "source": "OpenAI",
       "title": "OpenAI 提议给前沿模型设共同限值",
       "url": "https://openai.com/index/perplexity-and-intelligence/"
-    },
-    {
-      "date": "2026-11-23",
-      "source": "什么值得买",
-      "title": "森海塞尔消费业务二度挂牌，大馒头5到手2500、4代973元",
-      "url": "https://post.smzdm.com/p/am9v504z/"
     }
   ],
-  "updated_at": "2026-11-25T09:27:27+08:00"
+  "updated_at": "2026-11-25T11:27:27+08:00"
 }
