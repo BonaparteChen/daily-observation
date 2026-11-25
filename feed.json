@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "title": "陈睿：B站是 AI 时代最受益的平台之一",
+      "url": "https://www.ithome.com/1/031/942.htm",
+      "source": "IT之家",
+      "date": "2026-11-26"
+    },
+    {
       "title": "上海市委书记陈吉宁突然落马",
       "url": "https://udn.com/news/amp/story/7331/9899783",
       "source": "联合新闻网",
@@ -113,13 +119,7 @@
       "source": "Cisco",
       "title": "Cisco 与 OpenAI 联合推出开源 Shirudo",
       "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-and-openai-launch-shirudo-a-new-project-to-safeguard-agentic-ai.html"
-    },
-    {
-      "date": "2026-11-24",
-      "source": "新华社",
-      "title": "鸿蒙终端设备数突破1亿台",
-      "url": "https://www.news.cn/tech/20261124/c1449f3e0fe24233a97e58d967b8a5f0/c.html"
     }
   ],
-  "updated_at": "2026-11-26T03:27:00+08:00"
+  "updated_at": "2026-11-26T05:27:00+08:00"
 }
