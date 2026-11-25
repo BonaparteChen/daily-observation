@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "title": "上海市委书记陈吉宁突然落马",
+      "url": "https://udn.com/news/amp/story/7331/9899783",
+      "source": "联合新闻网",
+      "date": "2026-11-26"
+    },
+    {
       "title": "神舟二十四号发射成功，两个乘组太空会师",
       "url": "https://tv.cctv.com/2026/11/25/VIDEsd50AO2bTxaF5lTbFBva261125.shtml",
       "source": "央视网",
@@ -113,13 +119,7 @@
       "source": "新华社",
       "title": "鸿蒙终端设备数突破1亿台",
       "url": "https://www.news.cn/tech/20261124/c1449f3e0fe24233a97e58d967b8a5f0/c.html"
-    },
-    {
-      "date": "2026-11-24",
-      "source": "Anthropic",
-      "title": "Claude Ship 接管 PR 的审修批",
-      "url": "https://claude.com/resources/articles/introducing-claude-ship"
     }
   ],
-  "updated_at": "2026-11-26T01:27:00+08:00"
+  "updated_at": "2026-11-26T03:27:00+08:00"
 }
