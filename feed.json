@@ -2,6 +2,12 @@
   "items": [
     {
       "date": "2026-11-25",
+      "source": "IT之家",
+      "title": "AI5 优先给 Optimus，汽车继续用 AI4",
+      "url": "https://www.ithome.com/1/031/915.htm"
+    },
+    {
+      "date": "2026-11-25",
       "source": "少数派",
       "title": "Palm Pre：内藏「划时代」系统的手机",
       "url": "https://sspai.com/post/118791"
@@ -113,13 +119,7 @@
       "source": "36氪",
       "title": "OpenAI与Anthropic同日称证伪指数时间假设",
       "url": "https://www.36kr.com/p/4045003727606918"
-    },
-    {
-      "date": "2026-11-24",
-      "source": "eogee",
-      "title": "DeepSeek Harness v0.2.3-alpha.1 新增七类连接器",
-      "url": "https://eogee.com/article/413"
     }
   ],
-  "updated_at": "2026-11-25T21:28:22+08:00"
+  "updated_at": "2026-11-25T23:29:00+08:00"
 }
