@@ -1,40 +1,52 @@
 {
   "items": [
     {
-      "title": "Tidal 12月9日起下架纯AI生成音乐",
-      "url": "https://sspai.com/post/119560",
-      "source": "少数派",
-      "date": "2026-11-26"
-    },
-    {
-      "title": "文心 5.5 Flash Preview 权重开源，可商用",
-      "url": "https://cnera.cn/article/ernie-55-flash-open-weights-20261125.html",
-      "source": "CNERA",
-      "date": "2026-11-26"
-    },
-    {
-      "title": "浮屏把截图变成锁屏卡片",
-      "url": "https://sspai.com/a/nqBa3J",
-      "source": "少数派",
-      "date": "2026-11-26"
-    },
-    {
-      "title": "陈睿：B站是 AI 时代最受益的平台之一",
-      "url": "https://www.ithome.com/1/031/942.htm",
+      "date": "2026-11-26",
       "source": "IT之家",
-      "date": "2026-11-26"
+      "title": "千问 Go 免费代打电话全面开放",
+      "url": "https://www.ithome.com/1/031/969.htm"
     },
     {
-      "title": "上海市委书记陈吉宁突然落马",
-      "url": "https://udn.com/news/amp/story/7331/9899783",
+      "date": "2026-11-26",
+      "source": "蔚来官网",
+      "title": "蔚来发布世界模型 NWM 3.0 和 NOMI 4.0",
+      "url": "https://www.nio.com/news/20261125001"
+    },
+    {
+      "date": "2026-11-26",
+      "source": "少数派",
+      "title": "Tidal 12月9日起下架纯AI生成音乐",
+      "url": "https://sspai.com/post/119560"
+    },
+    {
+      "date": "2026-11-26",
+      "source": "CNERA",
+      "title": "文心 5.5 Flash Preview 权重开源，可商用",
+      "url": "https://cnera.cn/article/ernie-55-flash-open-weights-20261125.html"
+    },
+    {
+      "date": "2026-11-26",
+      "source": "少数派",
+      "title": "浮屏把截图变成锁屏卡片",
+      "url": "https://sspai.com/a/nqBa3J"
+    },
+    {
+      "date": "2026-11-26",
+      "source": "IT之家",
+      "title": "陈睿：B站是 AI 时代最受益的平台之一",
+      "url": "https://www.ithome.com/1/031/942.htm"
+    },
+    {
+      "date": "2026-11-26",
       "source": "联合新闻网",
-      "date": "2026-11-26"
+      "title": "上海市委书记陈吉宁突然落马",
+      "url": "https://udn.com/news/amp/story/7331/9899783"
     },
     {
-      "title": "神舟二十四号发射成功，两个乘组太空会师",
-      "url": "https://tv.cctv.com/2026/11/25/VIDEsd50AO2bTxaF5lTbFBva261125.shtml",
+      "date": "2026-11-26",
       "source": "央视网",
-      "date": "2026-11-26"
+      "title": "神舟二十四号发射成功，两个乘组太空会师",
+      "url": "https://tv.cctv.com/2026/11/25/VIDEsd50AO2bTxaF5lTbFBva261125.shtml"
     },
     {
       "date": "2026-11-25",
@@ -107,19 +119,7 @@
       "source": "少数派",
       "title": "迪卡侬 Fold 560 官方二手 1949.9 元",
       "url": "https://sspai.com/post/119492"
-    },
-    {
-      "date": "2026-11-25",
-      "source": "格隆汇",
-      "title": "Anthropic 跌破 IPO 发行价",
-      "url": "https://cn.tradingview.com/news/gelonghui:13e759f25e3f9:0/"
-    },
-    {
-      "date": "2026-11-24",
-      "source": "少数派",
-      "title": "Aqara 落地灯 T1 609 元，支持 Matter 直连 Apple Home",
-      "url": "https://sspai.com/post/119287"
     }
   ],
-  "updated_at": "2026-11-26T11:27:00+08:00"
+  "updated_at": "2026-11-26T13:27:00+08:00"
 }
