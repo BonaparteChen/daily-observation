@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-11-27T05:27:00+08:00",
+  "updated_at": "2026-11-27T07:27:00+08:00",
   "items": [
+    {
+      "date": "2026-11-27",
+      "source": "少数派",
+      "title": "Audio Print：Mac 离线实时字幕与精听工具",
+      "url": "https://sspai.com/post/119491"
+    },
     {
       "date": "2026-11-27",
       "source": "路透社",
@@ -114,12 +120,6 @@
       "source": "少数派",
       "title": "Yab：开源双内核浏览器，给舍不得 Arc 的你",
       "url": "https://sspai.com/post/119310"
-    },
-    {
-      "date": "2026-11-25",
-      "source": "什么值得买",
-      "title": "双11扫地机器人攻略：入门从1998元起",
-      "url": "https://post.smzdm.com/p/a3mxx2vd/"
     }
   ]
 }
