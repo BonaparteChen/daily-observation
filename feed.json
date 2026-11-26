@@ -1,5 +1,12 @@
 {
+  "updated_at": "2026-11-26T23:27:00+08:00",
   "items": [
+    {
+      "date": "2026-11-26",
+      "source": "什么值得买",
+      "title": "尼康“国补”多半不是“国”补",
+      "url": "https://post.smzdm.com/p/ak839r64/"
+    },
     {
       "date": "2026-11-26",
       "source": "网易",
@@ -113,13 +120,6 @@
       "source": "Hypebeast",
       "title": "Teenage Engineering 推出首款 CD 播放器 EP/BC-1",
       "url": "https://hypebeast.cn/2026/11/teenage-engineering-ep-bc-1-first-ever-cd-player-release-info"
-    },
-    {
-      "date": "2026-11-25",
-      "source": "科技日报",
-      "title": "豆包「小豆」开启邀请制公测",
-      "url": "https://www.stdaily.com/web/gdxw/2026-11/24/content_618353.html"
     }
-  ],
-  "updated_at": "2026-11-26T21:27:00+08:00"
+  ]
 }
