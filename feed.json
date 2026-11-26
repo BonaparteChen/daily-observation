@@ -2,6 +2,12 @@
   "items": [
     {
       "date": "2026-11-26",
+      "source": "VS Code 官网",
+      "title": "VS Code 1.148：关窗口后 agent 还能继续干活",
+      "url": "https://code.visualstudio.com/updates/v1_148"
+    },
+    {
+      "date": "2026-11-26",
       "source": "凤凰网科技",
       "title": "三部委：到2030年建成性能领先的新一代通信网，适时开展6G",
       "url": "https://tech.ifeng.com/c/8yMOZo6RQ09"
@@ -113,13 +119,7 @@
       "source": "C114通信网",
       "title": "陈睿称生成式AI至少让视频产业价值提高10倍",
       "url": "https://www.c114.net.cn/ainews/151289.html"
-    },
-    {
-      "date": "2026-11-25",
-      "source": "少数派",
-      "title": "米家智能鱼缸 2 Pro：养鱼更省心，造景更自由",
-      "url": "https://go-post.sspai.com/post/119023"
     }
   ],
-  "updated_at": "2026-11-26T17:27:00+08:00"
+  "updated_at": "2026-11-26T19:27:00+08:00"
 }
