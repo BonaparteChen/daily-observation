@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-11-27T03:27:00+08:00",
+  "updated_at": "2026-11-27T05:27:00+08:00",
   "items": [
+    {
+      "date": "2026-11-27",
+      "source": "路透社",
+      "title": "防蒸馏措施与芯片管制拖慢中国 AI 开发",
+      "url": "https://www.reuters.com/jp/business/technology/YX2XTQYWWZLCDETWZ7BT25GU4I-2026-11-26/"
+    },
     {
       "date": "2026-11-27",
       "source": "少数派",
@@ -114,12 +120,6 @@
       "source": "什么值得买",
       "title": "双11扫地机器人攻略：入门从1998元起",
       "url": "https://post.smzdm.com/p/a3mxx2vd/"
-    },
-    {
-      "date": "2026-11-25",
-      "source": "少数派",
-      "title": "怪手机们要回来了吗",
-      "url": "https://sspai.com/prime/story/weird-phones-are-returning"
     }
   ]
 }
