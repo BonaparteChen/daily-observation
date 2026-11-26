@@ -2,6 +2,12 @@
   "items": [
     {
       "date": "2026-11-26",
+      "source": "网易",
+      "title": "几百亿美元的AI，被网友玩成了二次元",
+      "url": "https://www.163.com/tech/article/LCLSS3FU00098IEO.html"
+    },
+    {
+      "date": "2026-11-26",
       "source": "VS Code 官网",
       "title": "VS Code 1.148：关窗口后 agent 还能继续干活",
       "url": "https://code.visualstudio.com/updates/v1_148"
@@ -113,13 +119,7 @@
       "source": "科技日报",
       "title": "豆包「小豆」开启邀请制公测",
       "url": "https://www.stdaily.com/web/gdxw/2026-11/24/content_618353.html"
-    },
-    {
-      "date": "2026-11-25",
-      "source": "C114通信网",
-      "title": "陈睿称生成式AI至少让视频产业价值提高10倍",
-      "url": "https://www.c114.net.cn/ainews/151289.html"
     }
   ],
-  "updated_at": "2026-11-26T19:27:00+08:00"
+  "updated_at": "2026-11-26T21:27:00+08:00"
 }
