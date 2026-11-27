@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-11-27T13:29:00+08:00",
+  "updated_at": "2026-11-27T15:30:00+08:00",
   "items": [
+    {
+      "date": "2026-11-27",
+      "source": "少数派",
+      "title": "1Password 确认内部系统遭入侵",
+      "url": "https://sspai.com/post/119632"
+    },
     {
       "date": "2026-11-27",
       "source": "MiniMax",
@@ -114,12 +120,6 @@
       "source": "IT之家",
       "title": "陈睿：B站是 AI 时代最受益的平台之一",
       "url": "https://www.ithome.com/1/031/942.htm"
-    },
-    {
-      "date": "2026-11-26",
-      "source": "联合新闻网",
-      "title": "上海市委书记陈吉宁突然落马",
-      "url": "https://udn.com/news/amp/story/7331/9899783"
     }
   ]
 }
