@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-11-27T21:27:00+08:00",
+  "updated_at": "2026-11-27T23:27:00+08:00",
   "items": [
+    {
+      "date": "2026-11-27",
+      "source": "IT之家",
+      "title": "谷歌 Play：2027 年 3 月起交易者须公开住址电话",
+      "url": "https://www.ithome.com/1/033/148.htm"
+    },
     {
       "date": "2026-11-27",
       "source": "少数派",
@@ -114,12 +120,6 @@
       "source": "蔚来官网",
       "title": "蔚来发布世界模型 NWM 3.0 和 NOMI 4.0",
       "url": "https://www.nio.com/news/20261125001"
-    },
-    {
-      "date": "2026-11-26",
-      "source": "少数派",
-      "title": "Tidal 12月9日起下架纯AI生成音乐",
-      "url": "https://sspai.com/post/119560"
     }
   ]
 }
