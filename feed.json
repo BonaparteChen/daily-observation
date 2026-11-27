@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-11-27T19:27:00+08:00",
+  "updated_at": "2026-11-27T21:27:00+08:00",
   "items": [
+    {
+      "date": "2026-11-27",
+      "source": "少数派",
+      "title": "Agora 是开源的 Android 多模型聊天工具",
+      "url": "https://sspai.com/post/116773"
+    },
     {
       "date": "2026-11-27",
       "source": "iHerb",
@@ -114,12 +120,6 @@
       "source": "少数派",
       "title": "Tidal 12月9日起下架纯AI生成音乐",
       "url": "https://sspai.com/post/119560"
-    },
-    {
-      "date": "2026-11-26",
-      "source": "CNERA",
-      "title": "文心 5.5 Flash Preview 权重开源，可商用",
-      "url": "https://cnera.cn/article/ernie-55-flash-open-weights-20261125.html"
     }
   ]
 }
