@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-11-27T07:27:00+08:00",
+  "updated_at": "2026-11-27T09:27:00+08:00",
   "items": [
+    {
+      "date": "2026-11-27",
+      "source": "TestingCatalog",
+      "title": "疑似 Opus 5.6 用代码做 PPT，获 700 万浏览",
+      "url": "https://www.sohu.com/a/1106838888_639898"
+    },
     {
       "date": "2026-11-27",
       "source": "少数派",
@@ -114,12 +120,6 @@
       "source": "少数派",
       "title": "Palm Pre：内藏「划时代」系统的手机",
       "url": "https://sspai.com/post/118791"
-    },
-    {
-      "date": "2026-11-25",
-      "source": "少数派",
-      "title": "Yab：开源双内核浏览器，给舍不得 Arc 的你",
-      "url": "https://sspai.com/post/119310"
     }
   ]
 }
