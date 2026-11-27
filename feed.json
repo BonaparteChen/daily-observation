@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-11-27T23:27:00+08:00",
+  "updated_at": "2026-11-28T01:27:00+08:00",
   "items": [
+    {
+      "date": "2026-11-28",
+      "source": "快科技",
+      "title": "智谱高管否认 GLM-5.5 延期传闻",
+      "url": "https://news.mydrivers.com/1/1168/1168924.htm"
+    },
     {
       "date": "2026-11-27",
       "source": "IT之家",
@@ -114,12 +120,6 @@
       "source": "IT之家",
       "title": "千问 Go 免费代打电话全面开放",
       "url": "https://www.ithome.com/1/031/969.htm"
-    },
-    {
-      "date": "2026-11-26",
-      "source": "蔚来官网",
-      "title": "蔚来发布世界模型 NWM 3.0 和 NOMI 4.0",
-      "url": "https://www.nio.com/news/20261125001"
     }
   ]
 }
