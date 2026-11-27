@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-11-27T17:27:00+08:00",
+  "updated_at": "2026-11-27T19:27:00+08:00",
   "items": [
+    {
+      "date": "2026-11-27",
+      "source": "iHerb",
+      "title": "iHerb 黑五：甘氨酸镁 7 折",
+      "url": "https://tw.iherb.com/pr/doctor-s-best-high-absorption-magnesium-lysinate-glycinate-chelated-albion-traacs-240-tablets-100-mg-per-tablet/16567"
+    },
     {
       "date": "2026-11-27",
       "source": "财新",
@@ -114,12 +120,6 @@
       "source": "CNERA",
       "title": "文心 5.5 Flash Preview 权重开源，可商用",
       "url": "https://cnera.cn/article/ernie-55-flash-open-weights-20261125.html"
-    },
-    {
-      "date": "2026-11-26",
-      "source": "少数派",
-      "title": "浮屏把截图变成锁屏卡片",
-      "url": "https://sspai.com/a/nqBa3J"
     }
   ]
 }
