@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-11-28T01:27:00+08:00",
+  "updated_at": "2026-11-28T03:27:00+08:00",
   "items": [
+    {
+      "date": "2026-11-28",
+      "source": "Claude",
+      "title": "Claude 的 Artifacts 能装成 Mac 与 Windows 应用了",
+      "url": "https://claude.com/resources/articles/install-as-app"
+    },
     {
       "date": "2026-11-28",
       "source": "快科技",
@@ -114,12 +120,6 @@
       "source": "中文科技资讯",
       "title": "480B 视频模型 MAGI-2 发布，1080p 每秒 0.5 元",
       "url": "https://www.cwx.com.cn/technews/202611/123072.html"
-    },
-    {
-      "date": "2026-11-26",
-      "source": "IT之家",
-      "title": "千问 Go 免费代打电话全面开放",
-      "url": "https://www.ithome.com/1/031/969.htm"
     }
   ]
 }
