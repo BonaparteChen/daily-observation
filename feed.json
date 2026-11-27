@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-11-27T12:28:00+08:00",
+  "updated_at": "2026-11-27T13:29:00+08:00",
   "items": [
+    {
+      "date": "2026-11-27",
+      "source": "MiniMax",
+      "title": "MiniMax 推出 H3 家族，视频与图像模型一次补齐",
+      "url": "https://www.minimax.io/blog/minimax-h3-family"
+    },
     {
       "date": "2026-11-27",
       "source": "IT之家",
@@ -114,12 +120,6 @@
       "source": "联合新闻网",
       "title": "上海市委书记陈吉宁突然落马",
       "url": "https://udn.com/news/amp/story/7331/9899783"
-    },
-    {
-      "date": "2026-11-26",
-      "source": "央视网",
-      "title": "神舟二十四号发射成功，两个乘组太空会师",
-      "url": "https://tv.cctv.com/2026/11/25/VIDEsd50AO2bTxaF5lTbFBva261125.shtml"
     }
   ]
 }
