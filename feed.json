@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-11-27T11:27:00+08:00",
+  "updated_at": "2026-11-27T12:28:00+08:00",
   "items": [
+    {
+      "date": "2026-11-27",
+      "source": "IT之家",
+      "title": "索尼 WH-1000XM4C 国行开售，1799 元",
+      "url": "https://www.ithome.com/1/033/027.htm"
+    },
     {
       "date": "2026-11-27",
       "source": "cnbugs",
@@ -114,12 +120,6 @@
       "source": "央视网",
       "title": "神舟二十四号发射成功，两个乘组太空会师",
       "url": "https://tv.cctv.com/2026/11/25/VIDEsd50AO2bTxaF5lTbFBva261125.shtml"
-    },
-    {
-      "date": "2026-11-25",
-      "source": "IT之家",
-      "title": "AI5 优先给 Optimus，汽车继续用 AI4",
-      "url": "https://www.ithome.com/1/031/915.htm"
     }
   ]
 }
