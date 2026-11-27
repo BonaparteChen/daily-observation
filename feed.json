@@ -1,6 +1,12 @@
 {
-  "updated_at": "2026-11-28T05:27:00+08:00",
+  "updated_at": "2026-11-28T07:27:00+08:00",
   "items": [
+    {
+      "date": "2026-11-28",
+      "source": "36氪",
+      "title": "字节要在年底前拿出世界模型，对标 Genie 3",
+      "url": "https://www.36kr.com/p/3838454229027072"
+    },
     {
       "date": "2026-11-28",
       "source": "ITBear科技资讯",
@@ -114,12 +120,6 @@
       "source": "VS Code 官网",
       "title": "VS Code 1.148：关窗口后 agent 还能继续干活",
       "url": "https://code.visualstudio.com/updates/v1_148"
-    },
-    {
-      "date": "2026-11-26",
-      "source": "凤凰网科技",
-      "title": "三部委：到2030年建成性能领先的新一代通信网，适时开展6G",
-      "url": "https://tech.ifeng.com/c/8yMOZo6RQ09"
     }
   ]
 }
