@@ -2,6 +2,12 @@
   "items": [
     {
       "date": "2026-11-28",
+      "source": "BornCity",
+      "title": "黑五折扣下，32GB DDR5 仍要 450 美元",
+      "url": "https://borncity.com/news/ddr5-6000-32-gigabyte-kosten-trotz-black-friday-rabatten-bis-zu-450-dollar/"
+    },
+    {
+      "date": "2026-11-28",
       "source": "少数派",
       "title": "用 ChatGPT 和 Keynote 免费搞定论文机理图",
       "url": "https://sspai.com/post/119563"
@@ -113,13 +119,7 @@
       "source": "路透社",
       "title": "防蒸馏措施与芯片管制拖慢中国 AI 开发",
       "url": "https://www.reuters.com/jp/business/technology/YX2XTQYWWZLCDETWZ7BT25GU4I-2026-11-26/"
-    },
-    {
-      "date": "2026-11-27",
-      "source": "少数派",
-      "title": "华为小折叠电脑今天开售，14999 元起",
-      "url": "https://sspai.com/post/119527"
     }
   ],
-  "updated_at": "2026-11-28T15:29:07+08:00"
+  "updated_at": "2026-11-28T17:29:26+08:00"
 }
