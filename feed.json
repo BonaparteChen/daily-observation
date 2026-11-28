@@ -2,6 +2,12 @@
   "items": [
     {
       "date": "2026-11-28",
+      "source": "联合新闻网",
+      "title": "英伟达叫停向东南亚四国发运AI服务器",
+      "url": "https://tech.udn.com/tech/story/123454/9906388"
+    },
+    {
+      "date": "2026-11-28",
       "source": "BornCity",
       "title": "黑五折扣下，32GB DDR5 仍要 450 美元",
       "url": "https://borncity.com/news/ddr5-6000-32-gigabyte-kosten-trotz-black-friday-rabatten-bis-zu-450-dollar/"
@@ -113,13 +119,7 @@
       "source": "少数派",
       "title": "Audio Print：Mac 离线实时字幕与精听工具",
       "url": "https://sspai.com/post/119491"
-    },
-    {
-      "date": "2026-11-27",
-      "source": "路透社",
-      "title": "防蒸馏措施与芯片管制拖慢中国 AI 开发",
-      "url": "https://www.reuters.com/jp/business/technology/YX2XTQYWWZLCDETWZ7BT25GU4I-2026-11-26/"
     }
   ],
-  "updated_at": "2026-11-28T17:29:26+08:00"
+  "updated_at": "2026-11-28T19:28:30+08:00"
 }
